@@ -12,7 +12,7 @@ Each question is answered briefly and clearly to help with interview prep and re
 | 3   | [What is role of js engine?](#what-is-role-of-js-engine)                                                                 |
 | 4   | [What are the different data types in JavaScript?](#what-are-the-different-data-types-in-javascript)                     |
 | 5   | [What is Imperative & Declarative Programming in Javascript?](#what-is-imperative--declarative-programming-in-javascript) |
-
+| 6   | [What is Client side & Server side ? ](#what-is-client-side--server-side) |
 
 1. ### What is javascript?
    Javascript is a programming language which is used to convert static web apps into interactive dynamic ones.
@@ -30,6 +30,8 @@ Each question is answered briefly and clearly to help with interview prep and re
 
 5. ### What is Imperative & Declarative Programming in Javascript?
 
-    **Imperative** : This style of programming gives step by step instructions for how to achieve goals. main focus is on sequence of operations & control flow.<br/>eg: C, Python, Java, DSA use this approach.<br/><br/> `let results = [];`<br/>`for (let num of collection) {`<br/>    `if (num % 2 !== 0) {`<br/>    `results.push(num);`<br/>`}`<br/>`}`<br/><br/> **Declarative**:  This style of programming focuses on desired outcome & letting system decide how to do it. <br/> eg: SQL, HTML< React's JSX use this format.<br/><br/> `let results = collection.filter(num => num % 2 !== 0);`
+    **Imperative** : This style of programming gives step by step instructions for how to achieve goals. main focus is on sequence of operations & control flow.<br/>eg: C, Python, Java, DSA use this approach.<br/><br/> `let results = [];`<br/>`for (let num of collection) {`<br/>    `if (num % 2 !== 0) {`<br/>    `results.push(num);`<br/>`}`<br/>`}`<br/><br/> **Declarative**:  This style of programming focuses on desired outcome & letting system decide how to do it. <br/> eg: SQL, HTML< React's JSX use this format.<br/><br/> `let results = collection.filter(num => num % 2 !== 0);`<br/>
+
+6. ### What is Client side & Server side ?    
 
 
