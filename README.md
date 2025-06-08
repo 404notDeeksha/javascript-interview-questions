@@ -20,7 +20,7 @@ Each question is answered briefly and clearly to help with interview prep and re
     It is *lightweight* & *versatile*. <br/> It is a *dynamically typed language* (data type of variable is decided at runtime).<br/> It is *single threaded*.<br/> It is *weakly typed* (variable types are not enforced) & *interpreted language*.<br/> It is *Event Driven*, *asynchronous*, & has *Rich ecosystem*.
 
 3. ### What is role of js engine? 
-    Js engine is a program in web browser which executes js code.<br/> Chrome - V8 <br/> Firefox - spiderMonkey <br/> Safari - Js core <br/> Edge - Chakra 
+    Js engine is a program in web browser which executes js code. In order to enable it, use js file under `<script>` tag in index.html file. <br/> Chrome - V8 <br/> Firefox - spiderMonkey <br/> Safari - Js core <br/> Edge - Chakra 
     
 
 4. ### What are the different data types in JavaScript?
