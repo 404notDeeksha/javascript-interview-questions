@@ -9,10 +9,19 @@ Each question is answered briefly and clearly to help with interview prep and re
 | --- | ---------------------------------------------------------------------------------- |
 
 | 1  | [What is JavaScript?  What is role of js engine?](#what-is-javascript-what-is-role-of-js-engine)                                     |
-| 2  | [What are the different data types in JavaScript?](#what-are-the-different-data-types-in-javascript)                                     |
+| 2  | [What are its features?](#what-are-its-features)                                     |
+| 3  | [What is role of js engine?](#what-is-role-of-js-engine)                                     |
+| 4  | [What are the different data types in JavaScript?](#what-are-the-different-data-types-in-javascript)                                     |
                                        
 
-1. ### What is javascript? What is role of js engine?
+1. ### What is javascript? 
+    Javascript is a programming language which is used to convert static web apps into dynamic ones.
+    
+2. ### What are its features? 
+    It is *lightweight* & *versatile*. <br/> It is a *dynamically typed language* (data type of variable is decided at runtime).<br/> It is *single threaded*.<br/> It is *weakly typed* (variable types are not enforced) & *interpreted language*.<br/> It is *Event Driven*, *asynchronous*, & has *Rich ecosystem*.
+
+3. ### What is role of js engine? 
+    
 
 2. ### What are the different data types in JavaScript?
 
