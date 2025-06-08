@@ -7,13 +7,9 @@ Each question is answered briefly and clearly to help with interview prep and re
 
 | No. | Question                                                                                                              |
 | --- | --------------------------------------------------------------------------------------------------------------------- |
-
 | 1  | [What is JavaScript?  What is role of js engine?](#what-is-javascript-what-is-role-of-js-engine)                       |
-
 | 2  | [What are its features?](#what-are-its-features)                                                                       |
-
 | 3  | [What is role of js engine?](#what-is-role-of-js-engine)                                                               |
-
 | 4  | [What are the different data types in JavaScript?](#what-are-the-different-data-types-in-javascript)                   |
                                        
 
