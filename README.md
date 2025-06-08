@@ -30,12 +30,6 @@ Each question is answered briefly and clearly to help with interview prep and re
 
 5. ### What is Imperative & Declarative Programming in Javascript?
 
-    **Imperative** : This style of programming gives step by step instructions for how to achieve goals. main focus is on sequence of operations & control flow.<br/>eg: C, Python, Java, DSA use this approach.<br/> let results = [];
-    for (let num of collection) {
-    if (num % 2 !== 0) {
-    results.push(num);
-    }
-    }
- <br/> **Declarative**:  This style of programming focuses on desired outcome & letting system decide how to do it. <br/> eg: SQL, HTML< React's JSX use this format.<br/> let results = collection.filter(num => num % 2 !== 0);
+    **Imperative** : This style of programming gives step by step instructions for how to achieve goals. main focus is on sequence of operations & control flow.<br/>eg: C, Python, Java, DSA use this approach.<br/> `let results = [];for (let num of collection) {    if (num % 2 !== 0) {    results.push(num);}}`<br/> **Declarative**:  This style of programming focuses on desired outcome & letting system decide how to do it. <br/> eg: SQL, HTML< React's JSX use this format.<br/> `let results = collection.filter(num => num % 2 !== 0);`
 
 
