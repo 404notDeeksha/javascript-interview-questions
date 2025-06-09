@@ -40,7 +40,7 @@ Each question is answered briefly and clearly to help with interview prep and re
 
 6. ### What is Client side Rendering & Server side Rendering?  
 
-   In *Client Side Rendering*, *browser* is responsible for rendering the web page. The server sends a basic HTML File & a Js bundle (after site has been deployed on a server). Browser runs the Js bundle which generates & displays UI. After Initial load, all updates & navigation happen in browser using Js. without reloading entire page. <br/> It reduces Server load, as server mainly handles API/ data requests & not page rendering. <br/> It leads to Interactive , dynamic user Experience, smoother navigation & real time updates. <br/> It also means slower initial load times, because browser needs to download & exceute Js before showing content.
+   In *Client Side Rendering*, *browser* is responsible for rendering the web page. The server sends a basic HTML File & a Js bundle (after site has been deployed on a server). Browser runs the Js bundle which generates & displays UI. After Initial load, all updates & navigation happen in browser using Js. without reloading entire page. <br/><ul><li> It reduces Server load, as server mainly handles API/ data requests & not page rendering. <br/><li> It leads to Interactive , dynamic user Experience, smoother navigation & real time updates.<li> <br/> It also means slower initial load times, because browser needs to download & exceute Js before showing content.</ul>
 
 7. ### What is scope in Js?
 
