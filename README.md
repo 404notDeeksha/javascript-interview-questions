@@ -57,5 +57,7 @@ Each question is answered briefly and clearly to help with interview prep and re
    | Redeclaration   | Allowed within the same scope      | Not allowed in the same scope         | Not allowed in the same scope              |
    | Reassignment    | Allowed                            | Allowed                               | Not allowed (value is constant)            |
    | Initialization  | Optional                           | Optional                              | Required                                   |
-   | Use Case        | Legacy code, old browsers          | Modern JS, variables that change      | Constants, values that never change        |<br/> **Hoisting** e.g.: <br/> 
+   | Use Case        | Legacy code, old browsers          | Modern JS, variables that change      | Constants, values that never change        |
+   
+    **Hoisting** e.g.: <br/> 
 
