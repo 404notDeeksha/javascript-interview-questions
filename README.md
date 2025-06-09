@@ -59,5 +59,8 @@ Each question is answered briefly and clearly to help with interview prep and re
    | Initialization  | Optional                           | Optional                              | Required                                   |
    | Use Case        | Legacy code, old browsers          | Modern JS, variables that change      | Constants, values that never change        |
    
-    **Hoisting** e.g.: <br/> 
-
+    **Hoisting**
+    **var**: 
+   `console.log(a); // Output: undefined`
+   `var a = 10;`
+   `console.log(a); // Output: 10`
