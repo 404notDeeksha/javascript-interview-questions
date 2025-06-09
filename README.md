@@ -63,12 +63,14 @@ Each question is answered briefly and clearly to help with interview prep and re
    **var**: <br/>
    `console.log(a); // Output: undefined`<br/>
    `var a = 10;`<br/>
-   `console.log(a); // Output: 10`<br/>
+   `console.log(a); // Output: 10`<br/><br/>
    **let**: <br/>
    `console.log(b); // ReferenceError: Cannot access 'b' before initialization`<br/>
    `let b = 20;`<br/>
-   `console.log(b); // This line won't run`<br/>
+   `console.log(b); // This line won't run`<br/><br/>
    **const**: <br/>
    `console.log(c); // ReferenceError: Cannot access 'c' before initialization` <br/>
    `const c = 30;`<br/>
    `console.log(c); // This line won't run`<br/>
+
+9. ###   
