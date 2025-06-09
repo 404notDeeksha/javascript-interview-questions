@@ -89,3 +89,4 @@ Each question is answered briefly and clearly to help with interview prep and re
 
 10. ### What are stages of Js Code processing?
 
+   1.**Parsing**: Js engine first parses the code (it reads Js source code, & checks for syntax errors. It converts code into structured format (DSA) called Abstract Syntax Tree (AST)). Parsing ensures code is valid for further processing. <br/> 2. **Compilation/Interpretation** : modern Js engines use mix of JIT compilation & interpretation. Engine converts parsed code into machine code/ bytecode which computer can execute. This step involves optimisation for faster execution.
