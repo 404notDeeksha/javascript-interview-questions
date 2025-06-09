@@ -13,7 +13,12 @@ Each question is answered briefly and clearly to help with interview prep and re
 | 3   | [What is role of js engine?](#what-is-role-of-js-engine)                                                                 |
 | 4   | [What are the different data types in JavaScript?](#what-are-the-different-data-types-in-javascript)                     |
 | 5   | [What is Imperative & Declarative Programming in Javascript?](#what-is-imperative--declarative-programming-in-javascript) |
-| 6   | [What is Client side & Server side? ](#what-is-client-side--server-side) |
+| 6   | [What is Client side Rendering & Server side Rendering?](#what-is-client-side-rendering--server-side-rendering)                                                  |
+| 6   | [What is Client side & Server side? ](#what-is-client-side--server-side)                                                  |
+| 6   | [What is Client side & Server side? ](#what-is-client-side--server-side)                                                  |
+| 6   | [What is Client side & Server side? ](#what-is-client-side--server-side)                                                  |
+| 6   | [What is Client side & Server side? ](#what-is-client-side--server-side)                                                  |
+| 6   | [What is Client side & Server side? ](#what-is-client-side--server-side)                                                  |
 
 1. ### What is javascript?
    Javascript is a programming language which is used to convert static web apps into interactive dynamic ones.
@@ -33,6 +38,11 @@ Each question is answered briefly and clearly to help with interview prep and re
 
     **Imperative** : This style of programming gives step by step instructions for how to achieve goals. main focus is on sequence of operations & control flow.<br/>eg: C, Python, Java, DSA use this approach.<br/><br/> `let results = [];`<br/>`for (let num of collection) {`<br/>    `if (num % 2 !== 0) {`<br/>    `results.push(num);`<br/>`}`<br/>`}`<br/><br/> **Declarative**:  This style of programming focuses on desired outcome & letting system decide how to do it. <br/> eg: SQL, HTML< React's JSX use this format.<br/><br/> `let results = collection.filter(num => num % 2 !== 0);`<br/>
 
-6. ### What is Client side & Server side?    
+6. ### What is Client side Rendering & Server side Rendering?  
 
-   Clent Side is a software application or a device which requests information or services from server & displays it. <br/>Languages used: HTML, CSS, Js. Devices used: Mobile, Laptop etc. <br/> Server Side is a software app which provides data or service to client as response when requested. <br/> Languages used: C#, java, php.  
+   In *Client Side Rendering*, *browser* is responsible for rendering the web page. The server sends a basic HTML File & a Js bundle (after site has been deployed on a server). Browser runs the Js bundle which generates & displays UI. After Initial load, all updates & navigation happen in browser using Js. without reloading entire page. <br/> It reduces Server load, as server mainly handles API/ data requests & not page rendering. <br/> It leads to Interactive , dynamic user Experience, smoother navigation & real time updates. <br/> It also means slower initial load times, because browser needs to download & exceute Js before showing content.
+
+7. ### What is scope in Js?
+
+
+
