@@ -59,8 +59,16 @@ Each question is answered briefly and clearly to help with interview prep and re
    | Initialization  | Optional                           | Optional                              | Required                                   |
    | Use Case        | Legacy code, old browsers          | Modern JS, variables that change      | Constants, values that never change        |
    
-    **Hoisting**
-    **var**: <br/>
+   **Hoisting** <br/>
+   **var**: <br/>
    `console.log(a); // Output: undefined`<br/>
    `var a = 10;`<br/>
    `console.log(a); // Output: 10`<br/>
+   **let**: <br/>
+   `console.log(b); // ReferenceError: Cannot access 'b' before initialization`<br/>
+   `let b = 20;`<br/>
+   `console.log(b); // This line won't run`<br/>
+   **const**: <br/>
+   `console.log(c); // ReferenceError: Cannot access 'c' before initialization` <br/>
+   `const c = 30;`<br/>
+   `console.log(c); // This line won't run`<br/>
