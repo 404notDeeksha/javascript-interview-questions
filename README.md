@@ -82,8 +82,7 @@ Each question is answered briefly and clearly to help with interview prep and re
 
 9. ### What is Hoisting?
 
-   Hoisting is a *Js mechanism* where interpreter appears to *move declarations of variables, functions, classes or imports* to the *top of their scope* before code is executed. <ul> <li>It means certain variables, functions can be accessed before they are actually declared in code. <li>**Variable Declarations** : Only declarations are hoisted & not initializations. <li> **Function Declarations**: These are fully hoisted, both function's name & body are available throughout the scope where they are declared.<li> **Class Declarations**: They are hoisted but not initialized, so referencing them before their declaration causes a ReferenceError.</ul><br/> Note: Hoisted means the code runs well at that point of flow (mostly declarations- let,var,const). <br/> <br/> **Function Hoisting**:  <br/> `foo(); // "Hello"` <br/>
+   Hoisting is a *Js mechanism* where interpreter appears to *move declarations of variables, functions, classes or imports* to the *top of their scope* before code is executed. <ul> <li>It means certain variables, functions can be accessed before they are actually declared in code. <li>**Variable Declarations** : Only declarations are hoisted & not initializations. <li> **Function Declarations**: These are fully hoisted, both function's name & body are available throughout the scope where they are declared.<li> **Class Declarations**: They are hoisted but not initialized, so referencing them before their declaration causes a ReferenceError.</ul><br/> Note: Hoisted means the code runs well at that point of flow (mostly declarations- let,var,const). <br/> It makes code more flexible & readable.  <br/> <br/> **Function Hoisting**:  <br/> `foo(); // "Hello"` <br/>
    `function foo() {`  <br/>
    `console.log("Hello");`  <br/>
-   `}`  <br/> It makes code more flexible & readable.  <br/>
-   
+   `}`  <br/> 
