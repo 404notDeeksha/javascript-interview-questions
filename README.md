@@ -13,8 +13,8 @@ Each question is answered briefly and clearly to help with interview prep and re
 | 3   | [What is role of js engine?](#what-is-role-of-js-engine)                                                                 |
 | 4   | [What are the different data types in JavaScript?](#what-are-the-different-data-types-in-javascript)                     |
 | 5   | [What is Imperative & Declarative Programming in Javascript?](#what-is-imperative--declarative-programming-in-javascript) |
-| 6   | [What is Client side Rendering & Server side Rendering?](#what-is-client-side-rendering--server-side-rendering)                                                  |
-| 6   | [What is Client side & Server side? ](#what-is-client-side--server-side)                                                  |
+| 6   | [What is Client side Rendering & Server side Rendering?](#what-is-client-side-rendering--server-side-rendering)                                                                           |
+| 6   | [What is scope in Js?](#what-is-scope-in-js)                                                                             |
 | 6   | [What is Client side & Server side? ](#what-is-client-side--server-side)                                                  |
 | 6   | [What is Client side & Server side? ](#what-is-client-side--server-side)                                                  |
 | 6   | [What is Client side & Server side? ](#what-is-client-side--server-side)                                                  |
@@ -45,3 +45,4 @@ Each question is answered briefly and clearly to help with interview prep and re
 
 7. ### What is scope in Js?
 
+   Scope means *current context* of *execution in which variables, objects & functions* are *accessible* in the code. It is of 3 types: <br/> <ol><li> **Global scope**: Variables declared outside of any function or block are in global scope. They can be accessed from anywhere. <li> **Function (Local) Scope**: Variables declared inside a function are only accessible within that function. They cannot be accessed from anywhere outside the function.<br/> Variables declared with var data type are function scoped. <li> **Block Scope**: Variables declared with let and const inside a block (eg., within {}, for loops, if statements, etc.) are only accessible within that block. </ol>
