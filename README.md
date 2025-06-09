@@ -60,7 +60,7 @@ Each question is answered briefly and clearly to help with interview prep and re
    | Use Case        | Legacy code, old browsers          | Modern JS, variables that change      | Constants, values that never change        |
    
     **Hoisting**
-    **var**: 
-   `console.log(a); // Output: undefined`
-   `var a = 10;`
-   `console.log(a); // Output: 10`
+    **var**: <br/>
+   `console.log(a); // Output: undefined`<br/>
+   `var a = 10;`<br/>
+   `console.log(a); // Output: 10`<br/>
