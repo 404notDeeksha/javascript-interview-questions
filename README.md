@@ -14,11 +14,11 @@ Each question is answered briefly and clearly to help with interview prep and re
 | 4   | [What are the different data types in JavaScript?](#what-are-the-different-data-types-in-javascript)                     |
 | 5   | [What is Imperative & Declarative Programming in Javascript?](#what-is-imperative--declarative-programming-in-javascript) |
 | 6   | [What is Client side Rendering & Server side Rendering?](#what-is-client-side-rendering--server-side-rendering)                                                                           |
-| 7   | [What is scope in Js?](#what-is-scope-in-js)                                                                             |
-| 8   | [What is difference between var, let & const?](#what-is-difference-between-var-let--const)                                                  |
-| 9   | [What is Hoisting?](#what-is-hoisting)                                                  |
-| 6   | [What is Client side & Server side? ](#what-is-client-side--server-side)                                                  |
-| 6   | [What is Client side & Server side? ](#what-is-client-side--server-side)                                                  |
+| 7   | [What is scope in Js?](#what-is-scope-in-js)                                                                               |
+| 8   | [What is difference between var, let & const?](#what-is-difference-between-var-let--const)                                                                                      |
+| 9   | [What is Hoisting?](#what-is-hoisting)                                                                                    |
+| 10  | [What are stages of Js Code processing?](#what-are-stages-of-js-code-processing)                                          |
+| 11  | [What is Client side & Server side? ](#what-is-client-side--server-side)                                                  |
 
 1. ### What is javascript?
    Javascript is a programming language which is used to convert static web apps into interactive dynamic ones.
@@ -86,3 +86,6 @@ Each question is answered briefly and clearly to help with interview prep and re
    `function foo() {`  <br/>
    `console.log("Hello");`  <br/>
    `}`  <br/> 
+
+10. ### What are stages of Js Code processing?
+
