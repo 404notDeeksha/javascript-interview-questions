@@ -53,9 +53,9 @@ Each question is answered briefly and clearly to help with interview prep and re
    | Feature         | var                                | let                                   | const                                      |
    |-----------------|------------------------------------|---------------------------------------|--------------------------------------------|
    | Scope           | Function-scoped or global-scoped   | Block-scoped                          | Block-scoped                               |
-   | Hoisting        | Yes (initialized as `undefined` at top of its scope)   | Yes (but not initialized, "temporal dead zone" (TDZ) applies)| Yes (but not initialized, TDZ applies)     |
+   | Hoisting        | Yes (initialized as `undefined` at top of its scope)   | Yes (but not initialized, Reference Err due to "temporal dead zone" (TDZ) applies)| Yes (but not initialized, TDZ applies)     |
    | Redeclaration   | Allowed within the same scope      | Not allowed in the same scope         | Not allowed in the same scope              |
    | Reassignment    | Allowed                            | Allowed                               | Not allowed (value is constant)            |
    | Initialization  | Optional                           | Optional                              | Required                                   |
-   | Use Case        | Legacy code, old browsers          | Modern JS, variables that change      | Constants, values that never change        |
+   | Use Case        | Legacy code, old browsers          | Modern JS, variables that change      | Constants, values that never change        |<br/> **Hoisting** e.g.: <br/> 
 
