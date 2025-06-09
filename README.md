@@ -50,4 +50,12 @@ Each question is answered briefly and clearly to help with interview prep and re
 
 8. ### What is difference between var, let & const?
 
+   | Feature         | var                                | let                                   | const                                      |
+   |-----------------|------------------------------------|---------------------------------------|--------------------------------------------|
+   | Scope           | Function-scoped or global-scoped   | Block-scoped                          | Block-scoped                               |
+   | Hoisting        | Yes (initialized as `undefined`)   | Yes (but not initialized, TDZ applies)| Yes (but not initialized, TDZ applies)     |
+   | Redeclaration   | Allowed within the same scope      | Not allowed in the same scope         | Not allowed in the same scope              |
+   | Reassignment    | Allowed                            | Allowed                               | Not allowed (value is constant)            |
+   | Initialization  | Optional                           | Optional                              | Required                                   |
+   | Use Case        | Legacy code, old browsers          | Modern JS, variables that change      | Constants, values that never change        |
 
