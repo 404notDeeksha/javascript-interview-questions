@@ -35,4 +35,4 @@ Each question is answered briefly and clearly to help with interview prep and re
 
 6. ### What is Client side & Server side?    
 
-
+   Clent Side is a software application or a device which requests information or services from server & displays it. <br/>Languages used: HTML, CSS, Js. Devices used: Mobile, Laptop etc. <br/> Server Side is a software app which provides data or service to client as response when requested. <br/> Languages used: C#, java, php.  
