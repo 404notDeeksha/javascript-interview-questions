@@ -82,8 +82,6 @@ Each question is answered briefly and clearly to help with interview prep and re
 
 9. ### What is Hoisting?
 
-   Hoisting is a *Js mechanism* where interpreter appears to *move declarations of variables, functions, classes or imports* to the *top of their scope* before code is executed. 
-   <ul> <li>It means certain variables, functions can be accessed before they are actually declared in code.
-   <li> **Variable Declarations** : Only declarations are hoisted & not initializations.
+   Hoisting is a *Js mechanism* where interpreter appears to *move declarations of variables, functions, classes or imports* to the *top of their scope* before code is executed. <ul> <li>It means certain variables, functions can be accessed before they are actually declared in code. <li>**Variable Declarations** : Only declarations are hoisted & not initializations.
    <li> **Function Declarations**: These are fully hoisted, both function's name & body are available throughout the scope where they are declared.
-   <li> **Class Declarations**: They are hoisted but not initialized, so referencing them before their declaration causes a ReferenceError.
+   <li> **Class Declarations**: They are hoisted but not initialized, so referencing them before their declaration causes a ReferenceError.</ul>
