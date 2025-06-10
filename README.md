@@ -35,6 +35,14 @@ Each question is answered briefly and clearly to help with interview prep and re
 4. ### What are the different data types in JavaScript?
 
    Javascript has basically 2 data types: <br/> <br/> A.**Primitive**: immutable, store single values:<br/> 1. **Number**: represents integers & floating-point numbers. eg: 7, 5.48. <br/> 2. **String**: represents sequence of characters. eg: "Hello".<br/> 3. **BigInt**: represents integers with arbitrary precision. number ends with n. Can represent any size of number, limited by memory. eg: 123456123456n <br/> 4. **Boolean**: represents logical values - true or false. <br/> 5. **Undefined**: variable that has been declared but isnt assigned a value. eg. let value; <br/> 6. **Null**: represents _Intentional_ absence of any object value. eg: let value = null; <br/> 7. **Symbol**: represent unique , immutable values, often used as object property keys.<br/><br/> B. **Non-Primitive** : <br/>**Object**: Used to store collection of data & more complex entities. eg: Objects(key-value pairs), Arrays(ordered collections), Functions, Dates, Maps, Sets, Regular Expressions(RegExp) etc.
+   > They store value & hold reference to a memory location. 
+   
+   Tricky Question:
+   ```js
+   let x = { a: 1 };  // x points to object1 in memory
+   let y = x;         // y also points to object1
+   x = { b: 2 };      // x now points to object2; y still points to object1
+   ```
 
 5. ### What is Imperative & Declarative Programming in Javascript?
 
@@ -95,13 +103,17 @@ Each question is answered briefly and clearly to help with interview prep and re
 
 9. ### What is Hoisting?
 
-   Hoisting is a *Js mechanism* where interpreter appears to *move declarations of variables, functions, classes or imports* to the *top of their scope* before code is executed. <ul> <li>It means certain variables, functions can be accessed before they are actually declared in code. <li>**Variable Declarations** : Only declarations are hoisted & not initializations. <li> **Function Declarations**: These are fully hoisted, both function's name & body are available throughout the scope where they are declared.<li> **Class Declarations**: They are hoisted but not initialized, so referencing them before their declaration causes a ReferenceError.</ul><br/> Note: Hoisted means the code runs well at that point of flow (mostly declarations- let,var,const). <br/> It makes code more flexible & readable.  <br/> <br/> **Function Hoisting**:
+   Hoisting is a *Js mechanism* where interpreter appears to *move declarations of variables, functions, classes or imports* to the *top of their scope* before code is executed. <ul> <li>It means certain variables, functions can be accessed before they are actually declared in code.  <li>**Variable Declarations** : Only declarations are hoisted & not initializations. <li> **Function Declarations**: These are fully hoisted, both function's name & body are available throughout the scope where they are declared.<li> **Class Declarations**: They are hoisted but not initialized, so referencing them before their declaration causes a ReferenceError.</ul> <br/> **Function Hoisting**:
    ```js 
    foo(); // "Hello"
    function foo() {
    console.log("Hello");
    }
    ``` 
+   > Hoisted means the code runs well at that point of flow (mostly declarations- let,var,const). 
+   It makes code more flexible & readable. 
+   When variables are declared, memory is assigned to them at top of their scope (Memory allocation phase). 
+   var gets undefined & let,const 's memory cant be used, thus Temporal Dead Zone.
 
 10. ### What are stages of Js Code processing?
 
@@ -118,3 +130,4 @@ Each question is answered briefly and clearly to help with interview prep and re
       }
       ```
 
+12. ### 
