@@ -18,7 +18,6 @@ Each question is answered briefly and clearly to help with interview prep and re
 | 8   | [What is difference between var, let & const?](#what-is-difference-between-var-let--const)                                                                                      |
 | 9   | [What is Hoisting?](#what-is-hoisting)                                                                                    |
 | 10  | [What are stages of Js Code processing?](#what-are-stages-of-js-code-processing)                                          |
-| 11  | [What is Client side & Server side? ](#what-is-client-side--server-side)                                                  |
 
 1. ### What is javascript?
    Javascript is a programming language which is used to convert static web apps into interactive dynamic ones.
@@ -45,7 +44,7 @@ Each question is answered briefly and clearly to help with interview prep and re
 
 7. ### What is scope in Js?
 
-   Scope means *current context* of *execution in which variables, objects & functions* are *accessible* in the code. <br/> <ol><li> **Global scope**: Variables declared outside of any function or block are in global scope. They can be accessed from anywhere. <li> **Function (Local) Scope**: Variables declared inside a function are only accessible within that function. They cannot be accessed from anywhere outside the function.<br/> Variables declared with var data type are function scoped. <li> **Block Scope**: Introduced in ES6, Variables declared with let and const inside a block (eg., within {}, for loops, if statements, etc.) are only accessible within that block. <li> Module Scope: While using Js modules, variables declared inside a module are only accessible within that module unless explicitly exported.</ol><br/><br/> Note: <ul><li>Scopes work in hierarchy. Inner(child) scopes can access Outer(Parent) scope, not vice versa. <li> Variable Shadowing: Variables under same name can be declared under different scopes. </ul><br/> `let x = 1; // Global scope` <br/><br/> `function exampleFunction() {`      <br/> 
+   Scope means *current context* of *execution in which variables, objects & functions* are *accessible* in the code. <br/> <ol><li> **Global scope**: Variables declared outside of any function or block are in global scope. They can be accessed from anywhere. <li> **Function (Local) Scope**: Variables declared inside a function are only accessible within that function. They cannot be accessed from anywhere outside the function.<br/> Variables declared with var data type are function scoped. <li> **Block Scope**: Introduced in ES6, Variables declared with let and const inside a block (eg., within {}, for loops, if statements, etc.) are only accessible within that block. <li> Module Scope: While using Js modules, variables declared inside a module are only accessible within that module unless explicitly exported.</ol><br/> Note: <ul><li>Scopes work in hierarchy. Inner(child) scopes can access Outer(Parent) scope, not vice versa. <li> Variable Shadowing: Variables under same name can be declared under different scopes. </ul><br/> `let x = 1; // Global scope` <br/><br/> `function exampleFunction() {`      <br/> 
    `let x = 2; // Function scope` <br/> 
     `if (true) {` <br/>
         `let x = 3; // Block scope` <br/> 
@@ -79,6 +78,18 @@ Each question is answered briefly and clearly to help with interview prep and re
    `console.log(c); // ReferenceError: Cannot access 'c' before initialization` <br/>
    `const c = 30;`<br/>
    `console.log(c); // This line won't run`<br/>
+
+   Tricky Question: 
+   ```js
+   for (var i = 0; i < 3; i++) {
+   setTimeout(() => console.log(i), 1);
+   }
+
+   for (let i = 0; i < 3; i++) {
+   setTimeout(() => console.log(i), 1);
+   }
+   //Output 333 012
+   ```
 
 9. ### What is Hoisting?
 
