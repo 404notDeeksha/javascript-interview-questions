@@ -19,7 +19,7 @@ Each question is answered briefly and clearly to help with interview prep and re
 | 9   | [What is Hoisting?](#what-is-hoisting)                                                                                    |
 | 10  | [What are stages of Js Code processing?](#what-are-stages-of-js-code-processing)                                          |
 | 11 | [What is JSON?](#what-is-json)|
-| 12 | []() |
+| 12 | [What is typeof operator in Js?](#what-is-typeof-operator-in-js) |
 | 13 | [What is Type Casting & Type Coercion?](#what-is-type-casting--type-coercion) |
 
 
@@ -43,7 +43,12 @@ Each question is answered briefly and clearly to help with interview prep and re
    ```js
    let x = { a: 1 };  // x points to object1 in memory
    let y = x;         // y also points to object1
-   x = { b: 2 };      // x now points to object2; y still points to object1
+   x = { b: 2 };      // x now points to object2; y still points to previous reference of x, object1   (Reassignment)
+
+
+   let x = { a: 1 };  // x points to object1 in memory
+   let y = x;         // y also points to object1
+   x.a = 2;      // Mutation This changes x & thus y too. 
    ```
 
 5. ### What is Imperative & Declarative Programming in Javascript?
@@ -172,10 +177,15 @@ Each question is answered briefly and clearly to help with interview prep and re
       Boolean(null);  // false
       Boolean(undefined) // false
       ```
-      2.**Type Coercion (Implicit Type Conversion)**: here, js automatically converts a value from one type to another as needed, usually during operations or comparisons.<br/> Often done when using operators like +, =, or conditional statements.
+      2.**Type Coercion (Implicit Type Conversion)**: here, js automatically converts a value from one type to another as needed, usually during operations or comparisons.<br/> Often done when using operators like +, ==, or conditional statements.
 
       ```js
       let result = "5" + 2; // JavaScript coerces 2 to "2", result is "52"
       let isEqual = (5 == "5"); // JavaScript coerces "5" to 5, result is true
+      console.log([] == ![]);         // true
+      // [] is truthy, but ![] is false. 
+      // [] == false → [] coerced to "", false to 0, 
+      // "" == 0 → true[2].
+
       ```
 
