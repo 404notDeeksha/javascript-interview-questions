@@ -143,4 +143,25 @@ Each question is answered briefly and clearly to help with interview prep and re
       }
       ```
 
-12. ### 
+12. ### What is typeof operator in Js?
+
+      It returns a string describing datatype of variable or value in picture. It is used for debugging, checking variables before performing operations.
+
+      ```js
+      typeof 42;           // "number"
+      typeof "hello";      // "string"
+      typeof true;         // "boolean"
+      typeof undefined;    // "undefined"
+      typeof {a:1};        // "object"
+      typeof [1,2,3];      // "object"   // Arrays are also objects
+      typeof null;         // "object"   // This is a known quirk in JavaScript
+      typeof function(){}; // "function"
+      ```
+     > cant differentiate between arrays or Objects & null or Objects.
+     
+
+13. ### What is Type Casting & Type Coercion?
+
+      These refer to changing value from one datatype to another in js.
+      <ol><li>Type Casting (Explicit Type Conversion) : in this, user *explicitly converts* a value from *one type to another* using *built-in functions* or methods. <li> 
+
