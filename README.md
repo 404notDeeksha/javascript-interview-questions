@@ -189,3 +189,14 @@ Each question is answered briefly and clearly to help with interview prep and re
 
       ```
 
+14. ### What is Concatenation?
+
+      It is the process of joining two or more strings together to form a single, longer string
+      ```js
+      let message = "Hello";
+      message += ", World!"; // "Hello, World!"
+      let greet = "Good";
+      let result = greet.concat(" Morning", " Everyone!"); // "Good Morning Everyone!"
+      const words = ["I", "love", "coding"];
+      const sentence = words.join(" "); // "I love coding"
+      ```
