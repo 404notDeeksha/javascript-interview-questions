@@ -25,11 +25,11 @@ Each question is answered briefly and clearly to help with interview prep and re
 | 15 | [What are Operators in js?](#what-are-operators-in-js) |
 | 16 | [What is Short Circuit Evaluation In js?](#what-is-short-circuit-evaluation-in-js) |
 | 17 | [What are Spread & Rest Operators?](#what-are-spread--rest-operators) |
-| 18 | [What is Loose Equality & Strict Equality Operators in Js?](#what-are-operators-in-js) |
-| 19 | [What are Functions? What are ways to define them?](#what-are-operators-in-js) |
-| 20 | [What are Operators in js?](#what-are-operators-in-js) |
-| 21 | [What are Operators in js?](#what-are-operators-in-js) |
-| 22 | [What are Operators in js?](#what-are-operators-in-js) |
+| 18 | [What is Loose Equality & Strict Equality Operators in Js?](#what-is-loose-equality--strict-equality-operators-in-js) |
+| 19 | [What are Functions? What are ways to define them?](#what-are-functions-what-are-ways-to-define-them) |
+| 20 | [What is a Callback Function?](#what-is-a-callback-function) |
+| 21 | [What are Higher Order Functions(HOCs)?](#what-are-higher-order-functions(hocs)) |
+| 22 | [What are Closures?](#what-are-closures) |
 | 23 | [What are Operators in js?](#what-are-operators-in-js) |
 
 
@@ -178,11 +178,15 @@ Each question is answered briefly and clearly to help with interview prep and re
       typeof function(){}; // "function"
       ```
      > cant differentiate between arrays or Objects & null or Objects.
+      isNaN() returns true for non number values-which cant convert to numbers. true for number values.
+      isNaN('a')  //true
+      isNaN(2)    //false
      
 
 13. ### What is Type Casting & Type Coercion?
 
-      These refer to changing value from one datatype to another in js.<br/>1. **Type Casting (Explicit Type Conversion)** : in this, user explicitly converts a value from one type to another using built-in functions or methods.
+      These refer to changing value from one datatype to another in js.<br/>
+      1. **Type Casting (Explicit Type Conversion)** : in this, user explicitly converts a value from one type to another using built-in functions or methods.
 
       ```js
       let num = "123";
@@ -193,18 +197,21 @@ Each question is answered briefly and clearly to help with interview prep and re
       2.**Type Coercion (Implicit Type Conversion)**: here, js automatically converts a value from one type to another as needed, usually during operations or comparisons.<br/> Often done when using operators like +, ==, or conditional statements.
 
       ```js
-      let result = "5" + 2; // JavaScript coerces 2 to "2", result is "52"
+      let result = "5" + 2; // JavaScript concatenates with + operator if either operand is string -> 2 to "2", result is "52"
       let isEqual = (5 == "5"); // JavaScript coerces "5" to 5, result is true
       console.log([] == ![]);         // true
       // [] is truthy, but ![] is false. 
       // [] == false → [] coerced to "", false to 0, 
       // "" == 0 → true[2].
-
+      console.log('d'-0);  //NaN
+      // 'd'->string to number but string => number not possible
+      // Nan-0 = Nan
       ```
 
 14. ### What is Concatenation?
 
-      It is the process of joining two or more strings together to form a single, longer string
+      It is the process of joining two or more strings together to form a single, longer string. 
+      >js concatenates with + operand if either operator is string. with -, * , / js tries to convert(direct) operands to numbers.
       ```js
       let message = "Hello";
       message += ", World!"; // "Hello, World!"
@@ -397,7 +404,53 @@ Each question is answered briefly and clearly to help with interview prep and re
 
 21. ### What are Higher Order Functions(HOCs)?
 
+      **Higher-order functions** are functions that either take one or more functions as arguments, return a function as a result, or both. Array methods like array.map(), array.filter(), array.reduce() are Higher Order Functions.
 
+      ```js
+      //fn returning another fn
+      function multiplier(factor) {
+        return function(num) {
+         return num * factor;
+         };
+      }
+      //multiplier return a fn
+      const double = multiplier(2);
+      console.log(double(5)); // 10
+
+      //fn which takes fn as an arguement
+      function greet(callback) {
+         console.log("Hello!");
+         callback();
+      }
+      function sayBye() {
+      console.log("Goodbye!");
+      }
+      greet(sayBye); // Output: Hello! Goodbye!
+      ```
+
+22. ### What are Closures?
+
+      A closure in JavaScript is a feature where an inner function has *access to the variables and parameters of its outer (enclosing) function*—even after the outer function has finished executing.
+      When a function is defined inside another function, the inner function forms a closure. <br/> The closure gives the inner function access to:
+      
+      1. Its own scope (variables defined inside it).
+      2. The scope of the outer function. 
+      3. The global scope
+
+      ```js
+      function outerFunction() {
+      let outerVariable = 'I am from the outer function';
+
+      function innerFunction() {
+      console.log(outerVariable);
+      }
+
+      return innerFunction;
+      }
+
+      const closureExample = outerFunction();
+      closureExample(); // Output: I am from the outer function
+      ```
 
 
 
