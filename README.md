@@ -3,7 +3,7 @@
 This repo is my personal collection of Javascript interview Q&A.  
 Each question is answered briefly and clearly to help with interview prep and revision.
 
----
+### Table of Contents
 
 | No. | Question                                                                                                                 |
 | --- | ------------------------------------------------------------------------------------------------------------------------ |
@@ -53,6 +53,8 @@ Each question is answered briefly and clearly to help with interview prep and re
    let y = x;         // y also points to object1
    x.a = 2;      // Mutation This changes x & thus y too. 
    ```
+
+   **[⬆ Back to Top](#table-of-contents)**
 
 5. ### What is Imperative & Declarative Programming in Javascript?
 
@@ -203,7 +205,7 @@ Each question is answered briefly and clearly to help with interview prep and re
       const words = ["I", "love", "coding"];
       const sentence = words.join(" "); // "I love coding"
       ```
-15. ## What are Operators in js?
+15. ### What are Operators in js?
 
       | Operator Type           | Example(s)                                      | Description                                 |
       |------------------------|-------------------------------------------------|---------------------------------------------|
