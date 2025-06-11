@@ -336,46 +336,46 @@ Each question is answered briefly and clearly to help with interview prep and re
          ```    
 
          2. **Function Expression**: Function is assigned to a variable. can be named or anonymous.<br/> 
-      Not Hoisted. Will give Reference Err due to TDZ.
-      ```js
-      const greet = function(name) {
-      return "Hello, " + name;
-      };
-      ```
+         Not Hoisted. Will give Reference Err due to TDZ.
+         ```js
+         const greet = function(name) {
+         return "Hello, " + name;
+         };
+         ```
 
-      3. **Arrow Function Expression (ES6)**: does not have its own `this` binding.
-      ```js
-      const greet = (name) => "Hello, " + name;
-      ``` 
+         3. **Arrow Function Expression (ES6)**: does not have its own `this` binding.
+         ```js
+         const greet = (name) => "Hello, " + name;
+         ``` 
 
-      4. **Method Definition (in Objects)**: functions are defined inside objects as methods.
-      ```js
-      const person = {
+         4. **Method Definition (in Objects)**: functions are defined inside objects as methods.
+         ```js
+         const person = {
          greet(name) {
             return "Hello, " + name;
             }
-      };
-      ```
-
-      5. **Function Constructor**: creates function dynamically from a string of code. 
-      ```js
-      const greet = new Function("name", "return 'Hello, ' + name;");
-      ```
-
-      6. **Generator and Async Functions**: Special types of functions for advanced use cases:
-         1. **Generator function**: uses function and yield.
-         2. **Async function**: uses async and returns a Promise.
-         ```js
-         async function fetchData() {
-         const response = await fetch('https://api.example.com/data');
-         const data = await response.json();
-         return data;
-         }
-
-         fetchData().then(data => {
-         console.log(data);
-         });
+         };
          ```
+
+         5. **Function Constructor**: creates function dynamically from a string of code. 
+         ```js
+         const greet = new Function("name", "return 'Hello, ' + name;");
+         ```
+
+         6. **Generator and Async Functions**: Special types of functions for advanced use cases:
+            1. **Generator function**: uses function and yield.
+            2. **Async function**: uses async and returns a Promise.
+            ```js
+            async function fetchData() {
+            const response = await fetch('https://api.example.com/data');
+            const data = await response.json();
+            return data;
+            }
+
+            fetchData().then(data => {
+            console.log(data);
+            });
+            ```
 
 
 
