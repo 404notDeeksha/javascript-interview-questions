@@ -318,25 +318,24 @@ Each question is answered briefly and clearly to help with interview prep and re
 
 19. ### What are Functions? What are ways to define them?
 
-      A function in JavaScript is a reusable block of code designed to perform a particular task. <br/> Functions help organize and modularize code, making it easier to maintain and reuse.<br/>
-      Function Definition needs:
+      A function in JavaScript is a reusable block of code designed to perform a particular task. <br/> Functions help organize and modularize code, making it easier to maintain and reuse.<br/><br/>
+      a function definition needs:
       1. The **function's name** (optional for anonymous functions).
       2. Parameters (inputs the function can accept).
       3. The code to execute (inside curly braces).
       4. Optionally, a return value.
-      <br/>
-      **Ways to define them**:
-      1. **Function Declaration (Statement)**: Named Function with function keyword.
-      Hoisted to top of its scope.   
-      ```js
-      //name - parameter
-      function greet(name) {
-      return "Hello, " + name;
-      }
-      greet("Deeksha"); //Deeksha - arguement
-      ```    
+      
+         1. **Function Declaration (Statement)**: Named Function with function keyword.
+         Hoisted to top of its scope.   
+         ```js
+         //name - parameter
+         function greet(name) {
+         return "Hello, " + name;
+         }
+         greet("Deeksha"); //Deeksha - arguement
+         ```    
 
-      2. **Function Expression**: Function is assigned to a variable. can be named or anonymous.<br/> 
+         2. **Function Expression**: Function is assigned to a variable. can be named or anonymous.<br/> 
       Not Hoisted. Will give Reference Err due to TDZ.
       ```js
       const greet = function(name) {
