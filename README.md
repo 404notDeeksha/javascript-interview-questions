@@ -68,9 +68,13 @@ Each question is answered briefly and clearly to help with interview prep and re
 
     **Imperative** : This style of programming gives step by step instructions for how to achieve goals. main focus is on sequence of operations & control flow.<br/>eg: C, Python, Java, DSA use this approach.<br/><br/> `let results = [];`<br/>`for (let num of collection) {`<br/>    `if (num % 2 !== 0) {`<br/>    `results.push(num);`<br/>`}`<br/>`}`<br/><br/> **Declarative**:  This style of programming focuses on desired outcome & letting system decide how to do it. <br/> eg: SQL, HTML< React's JSX use this format.<br/><br/> `let results = collection.filter(num => num % 2 !== 0);`<br/>
 
+   **[⬆ Back to Top](#table-of-contents)**    
+
 6. ### What is Client side Rendering & Server side Rendering?  
 
    In *Client Side Rendering*, *browser* is responsible for rendering the web page. The server sends a basic HTML File & a Js bundle (after site has been deployed on a server). Browser runs the Js bundle which generates & displays UI. After Initial load, all updates & navigation happen in browser using Js. without reloading entire page. <br/><ul><li> It reduces Server load, as server mainly handles API/ data requests & not page rendering. <li> It leads to Interactive , dynamic user Experience, smoother navigation & real time updates.<li>It also means slower initial load times, because browser needs to download & exceute Js before showing content & SEO Challenges as search engines may find indexing content difficult on client-side.</ul> <br/><br/>In *Server Side Rendering*, the server *generates the complete HTML for each page* and sends it to the browser. The browser *displays the page immediately*, and then JavaScript can take over for further interactivity. <br/> For each new page request, server renders React Component into HTML which is then sended over to client. Browser displays this HTML & React *hydrates* it to make it interactive. <ul><li> This means *faster Initial load times*, as browser recieves ready- to - go HTML.  <li> It means *SEO optimisation* as search engines can index pre-rendered content. <li> Better experience on slow networks as browser does less work here. <li> It also means, *Slower Navigation* as each new page needs a round trip to server, more server resources & more complex development & deployment.</ul><br/><br/> Note: **Hydration** is only used with SSR. In this, when HTML from server is loaded by browser on client side, React *matches it with its V-DOM*, attaches *event handlers & listeners* to existing HTML elements & *takes over DOM management* from here onwards. It brings interactivity & performance in SSR apps as full UI re-render is not needed & SEO optimisation also takes place.
+
+   **[⬆ Back to Top](#table-of-contents)**   
 
 7. ### What is scope in Js?
 
@@ -83,6 +87,8 @@ Each question is answered briefly and clearly to help with interview prep and re
   `console.log(x); // 2` <br/>
   `}` <br/><br/>`exampleFunction();` <br/>
   `console.log(x); // 1` <br/>
+
+   **[⬆ Back to Top](#table-of-contents)**  
 
 8. ### What is difference between var, let & const?
 
@@ -121,6 +127,8 @@ Each question is answered briefly and clearly to help with interview prep and re
    //Output 333 012
    ```
 
+   **[⬆ Back to Top](#table-of-contents)**   
+
 9. ### What is Hoisting?
 
    Hoisting is a *Js mechanism* where interpreter appears to *move declarations of variables, functions, classes or imports* to the *top of their scope* before code is executed. <ul> <li>It means certain variables, functions can be accessed before they are actually declared in code.  <li>**Variable Declarations** : Only declarations are hoisted & not initializations. <li> **Function Declarations**: These are fully hoisted, both function's name & body are available throughout the scope where they are declared.<li> **Class Declarations**: They are hoisted but not initialized, so referencing them before their declaration causes a ReferenceError.</ul> <br/> **Function Hoisting**:
@@ -147,10 +155,13 @@ Each question is answered briefly and clearly to help with interview prep and re
    sayHi();
    //Output undefined Reference Error
    ```
+   **[⬆ Back to Top](#table-of-contents)**
 
 10. ### What are stages of Js Code processing?
 
       Stages are: <br/> <ol> <li> **Parsing**: Js engine first parses the code (it reads Js source code, & checks for syntax errors. It converts code into structured format (DSA) called Abstract Syntax Tree (AST)). Parsing ensures code is valid for further processing. <li> **Compilation/Interpretation** : modern Js engines use mix of JIT (Just-in-time) compilation & interpretation. Engine converts parsed code into machine code/ bytecode which computer can execute. This step involves optimisation for faster execution. <li> **Execution Context Creation**: Before running the code, the engine creates an execution context. This is an environment where the code will run, including memory for variables and functions. It is of 2 main types: <br/> <ol> <li> 1. **Global Execution Context** (for code outside functions). <li> 2. **Function Execution Context** (created each time a function is called).</ol> <li> **Memory Allocation (Creation Phase)** : In each execution context, the engine performs a memory allocation phase (also called the "creation phase"). It sets up the variable environment, allocating space for variables and functions, and hoisting declarations as needed.  <li> **Code Execution (Execution Phase)** : The engine then executes the code line by line. It assigns values to variables, evaluates expressions, and runs function calls. <li> **Call Stack Management**: As functions are called, execution contexts are pushed onto the call stack (since Js is single threaded language). When a function finishes, its context is popped off the stack. <li> **Handling Asynchronous Code (Event Loop)**: For asynchronous operations (like setTimeout, Promises, AJAX), the engine interacts with the browser’s Web APIs, callback queue, and microtask queue.The event loop ensures that asynchronous callbacks are executed when the call stack is empty. </ol>
+
+   **[⬆ Back to Top](#table-of-contents)**      
 
 11. ### What is JSON?
 
@@ -162,6 +173,8 @@ Each question is answered briefly and clearly to help with interview prep and re
       "car": null
       }
       ```
+
+   **[⬆ Back to Top](#table-of-contents)**      
 
 12. ### What is typeof operator in Js?
 
@@ -181,7 +194,8 @@ Each question is answered briefly and clearly to help with interview prep and re
       isNaN() returns true for non number values-which cant convert to numbers. true for number values.
       isNaN('a')  //true
       isNaN(2)    //false
-     
+
+   **[⬆ Back to Top](#table-of-contents)**     
 
 13. ### What is Type Casting & Type Coercion?
 
@@ -208,6 +222,8 @@ Each question is answered briefly and clearly to help with interview prep and re
       // Nan-0 = Nan
       ```
 
+   **[⬆ Back to Top](#table-of-contents)**      
+
 14. ### What is Concatenation?
 
       It is the process of joining two or more strings together to form a single, longer string. 
@@ -220,6 +236,9 @@ Each question is answered briefly and clearly to help with interview prep and re
       const words = ["I", "love", "coding"];
       const sentence = words.join(" "); // "I love coding"
       ```
+
+   **[⬆ Back to Top](#table-of-contents)**   
+
 15. ### What are Operators in js?
 
       | Operator Type           | Example(s)                                      | Description                                 |
@@ -235,6 +254,8 @@ Each question is answered briefly and clearly to help with interview prep and re
       | **Optional Chaining**       | `obj?.prop`, `arr?.[index]`, `func?.()`            | Safely access nested properties, array items, or call functions without throwing an error if an intermediate value is `null` or `undefined` |
       | **Nullish Coalescing**      | `a ?? b`                                           | Returns `a` if it's not `null` or `undefined`, otherwise returns `b` (useful for setting default values only when the left side is truly "missing") |
 
+   **[⬆ Back to Top](#table-of-contents)**      
+
 16. ### What is Short Circuit Evaluation In js?
 
       It refers to how *logical operators* like **&& (AND),|| (OR)**, and newer operators such as **?? (nullish coalescing)** and **? (optional chaining)** evaluate expressions from **left to right** and **stop as soon as the result is determined**, without evaluating the rest of the expression
@@ -248,6 +269,8 @@ Each question is answered briefly and clearly to help with interview prep and re
          true || doSomething(); // doSomething() is NOT called
          ```
       > This skips evaluating parts of expressions & makes code faster
+
+      **[⬆ Back to Top](#table-of-contents)**   
 
 17. ### What are Spread & Rest Operators?
 
@@ -294,6 +317,8 @@ Each question is answered briefly and clearly to help with interview prep and re
       // a = 1, b = 2, rest = [3, 4, 5]
       ```
 
+   **[⬆ Back to Top](#table-of-contents)**
+
 18. ### What is Loose Equality & Strict Equality Operators in Js?
 
       **Loose Equality**: Compares two values for equality after *performing type conversion* if necessary. This can lead to unexpected results (implicit Type Coercion), especially when comparing values of different types.
@@ -322,6 +347,7 @@ Each question is answered briefly and clearly to help with interview prep and re
       0 === false   // false (different types: number vs boolean)
       5 === 5       // true (same type and value)
       ```
+   **[⬆ Back to Top](#table-of-contents)**      
 
 19. ### What are Functions? What are ways to define them?
 
@@ -383,6 +409,8 @@ Each question is answered briefly and clearly to help with interview prep and re
             console.log(data);
             });
             ```
+         **[⬆ Back to Top](#table-of-contents)**
+
 20. ### What is a Callback Function?
 
       It is any function **passed as an argument** to another function, which is then **invoked** inside the outer function to complete some kind of routine or action   
@@ -401,6 +429,7 @@ Each question is answered briefly and clearly to help with interview prep and re
       // Hello, Alice
       // Goodbye!
       ```
+   **[⬆ Back to Top](#table-of-contents)**
 
 21. ### What are Higher Order Functions(HOCs)?
 
@@ -427,6 +456,7 @@ Each question is answered briefly and clearly to help with interview prep and re
       }
       greet(sayBye); // Output: Hello! Goodbye!
       ```
+         **[⬆ Back to Top](#table-of-contents)**
 
 22. ### What are Closures?
 
@@ -451,7 +481,7 @@ Each question is answered briefly and clearly to help with interview prep and re
       const closureExample = outerFunction();
       closureExample(); // Output: I am from the outer function
       ```
-
+   **[⬆ Back to Top](#table-of-contents)**
 
 
 
