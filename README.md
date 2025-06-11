@@ -25,8 +25,8 @@ Each question is answered briefly and clearly to help with interview prep and re
 | 15 | [What are Operators in js?](#what-are-operators-in-js) |
 | 16 | [What is Short Circuit Evaluation In js?](#what-is-short-circuit-evaluation-in-js) |
 | 17 | [What are Spread & Rest Operators?](#what-are-spread--rest-operators) |
-| 18 | [What are Operators in js?](#what-are-operators-in-js) |
-| 19 | [What are Operators in js?](#what-are-operators-in-js) |
+| 18 | [What is Loose Equality & Strict Equality Operators in Js?](#what-are-operators-in-js) |
+| 19 | [What are Functions? What are ways to define them?](#what-are-operators-in-js) |
 | 20 | [What are Operators in js?](#what-are-operators-in-js) |
 | 21 | [What are Operators in js?](#what-are-operators-in-js) |
 | 22 | [What are Operators in js?](#what-are-operators-in-js) |
@@ -316,7 +316,74 @@ Each question is answered briefly and clearly to help with interview prep and re
       5 === 5       // true (same type and value)
       ```
 
-      
+19. ### What are Functions? What are ways to define them?
+
+      A function in JavaScript is a reusable block of code designed to perform a particular task. <br/> Functions help organize and modularize code, making it easier to maintain and reuse.<br/>
+      Function Definition needs:
+      1. The **function's name** (optional for anonymous functions).
+      2. Parameters (inputs the function can accept).
+      3. The code to execute (inside curly braces).
+      4. Optionally, a return value.
+      <br/>
+      **Ways to define them**:
+      1. **Function Declaration (Statement)**: Named Function with function keyword.
+      Hoisted to top of its scope.   
+      ```js
+      //name - parameter
+      function greet(name) {
+      return "Hello, " + name;
+      }
+      greet("Deeksha"); //Deeksha - arguement
+      ```    
+
+      2. **Function Expression**: Function is assigned to a variable. can be named or anonymous.<br/> 
+      Not Hoisted. Will give Reference Err due to TDZ.
+      ```js
+      const greet = function(name) {
+      return "Hello, " + name;
+      };
+      ```
+
+      3. **Arrow Function Expression (ES6)**: does not have its own `this` binding.
+      ```js
+      const greet = (name) => "Hello, " + name;
+      ``` 
+
+      4. **Method Definition (in Objects)**: functions are defined inside objects as methods.
+      ```js
+      const person = {
+         greet(name) {
+            return "Hello, " + name;
+            }
+      };
+      ```
+
+      5. **Function Constructor**: creates function dynamically from a string of code. 
+      ```js
+      const greet = new Function("name", "return 'Hello, ' + name;");
+      ```
+
+      6. **Generator and Async Functions**: Special types of functions for advanced use cases:
+         1. **Generator function**: uses function and yield.
+         2. **Async function**: uses async and returns a Promise.
+         ```js
+         async function fetchData() {
+         const response = await fetch('https://api.example.com/data');
+         const data = await response.json();
+         return data;
+         }
+
+         fetchData().then(data => {
+         console.log(data);
+         });
+         ```
+
+
+
+
+
+
+
 
 
             
