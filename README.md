@@ -36,8 +36,8 @@ Each question is answered briefly and clearly to help with interview prep and re
 | 26 | [What are Indexed Collections in React?](#what-are-indexed-collections-in-react) |
 | 27 | [What are Arrays in Js? What are its methods?](#what-are-arrays-in-js-what-are-its-methods) |
 | 28 | [How reduce method works?](#how-reduce-method-works) |
-<!-- | 29 | [](#) |
-| 30 | [](#) |
+| 29 | [What are Array like Objects in Js?](#what-are-array-like-objects-in-js) |
+<!--| 30 | [](#) |
 | 31 | [](#) |
 | 32 | [](#) |
 | 33 | [](#) |
@@ -704,6 +704,8 @@ for (const key of keys) {
    acc=10; //returns
    ```
    **[⬆ Back to Top](#table-of-contents)**
+
+29. ### What are Array like Objects in Js?
 
 
 
