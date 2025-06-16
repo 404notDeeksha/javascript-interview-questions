@@ -36,13 +36,13 @@ Each question is answered briefly and clearly to help with interview prep and re
 | 26 | [What are Indexed Collections in React?](#what-are-indexed-collections-in-react) |
 | 27 | [What are Arrays in Js? What are its methods?](#what-are-arrays-in-js-what-are-its-methods) |
 | 28 | [How reduce method works?](#how-reduce-method-works) |
-| 29 | [](#) |
+<!-- | 29 | [](#) |
 | 30 | [](#) |
 | 31 | [](#) |
 | 32 | [](#) |
 | 33 | [](#) |
 | 34 | [](#) |
-| 35 | [](#) |
+| 35 | [](#) | -->
 
 
 
