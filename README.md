@@ -31,11 +31,11 @@ Each question is answered briefly and clearly to help with interview prep and re
 | 21 | [What are Higher Order Functions(HOCs)?](#what-are-higher-order-functions(hocs)) |
 | 22 | [What are Closures?](#what-are-closures) |
 | 23 | [What are Objects in JS? What are ways to create it?](#what-are-operators-in-js) |
-| 24 | [What is Object Prototype?](#) |
-| 25 | [What is Prototypal Inheritance?](#) |
-| 26 | [](#) |
-| 27 | [](#) |
-| 28 | [](#) |
+| 24 | [What is Object Prototype?](#what-is-object-prototype) |
+| 25 | [What is Prototypal Inheritance?](#what-is-prototypal-inheritance) |
+| 26 | [What are Indexed Collections in React?](#what-are-indexed-collections-in-react) |
+| 27 | [What are Arrays in Js? What are its methods?](#what-are-arrays-in-js-what-are-its-methods) |
+| 28 | [How reduce method works?](#how-reduce-methods-works) |
 | 29 | [](#) |
 | 30 | [](#) |
 | 31 | [](#) |
@@ -582,34 +582,128 @@ Each question is answered briefly and clearly to help with interview prep and re
 
 27. ### What are Arrays in Js? What are its methods?
 
-   | Method         | Description                                                                 |
-|----------------|-----------------------------------------------------------------------------|
+      Arrays in JavaScript are ordered collections of elements, where each element is accessed by its *numeric index (starting from 0)*. Arrays can store values of any type, including numbers, strings, objects, or even other arrays. <br/>They are widely used for managing lists and collections of data in JavaScript.
+   
+   | Common Array Method         | Description                                                                 |
+   |----------------|   -----------------------------------------------------------------------------|
 | length         | Returns the number of elements in the array                                 |
 | toString()     | Converts the array to a comma-separated string                              |
-| at()           | Returns the element at a given index                                        |
+| at(index)           | Returns the element at a given index                                        |
 | join()         | Joins all elements into a string with a specified separator                 |
 | pop()          | Removes and returns the last element                                        |
 | push()         | Adds one or more elements to the end                                        |
 | shift()        | Removes and returns the first element                                       |
 | unshift()      | Adds one or more elements to the beginning                                  |
 | concat()       | Merges arrays and/or values into a new array                                |
-| slice()        | Returns a shallow copy of a portion of the array                            |
-| splice()       | Adds/removes/replaces elements at a specified index                         |
-| copyWithin()   | Copies part of the array to another location in the same array              |
-| flat()         | Flattens nested arrays into a single array                                  |
-| forEach()      | Executes a function for each array element                                  |
-| map()          | Creates a new array by applying a function to each element                  |
-| filter()       | Creates a new array with elements that pass a test                          |
+| slice(start,end)        | Returns a **shallow copy** of a portion of the array.<br/> start - inclusive. <br/>end - (optional, exclusive)                            |
+| splice(start, deleteCount,elementsToAdd)       | Adds/removes/replaces elements at a specified index. <br/>**Mutates original Array**<br/> elementsToAdd - optional                        |
+| copyWithin(target, start, end)   | Copies part of the array to another location in the same array. <br/>**Mutates original Array**. <br/> target - index where elements are to be modified from. <br/> start - index to start copying from (inclusive). <br/> end - Index to stop copying before (exclusive).            |
+| flat(depth)         | Flattens nested arrays into a single array.<br/> depth - optional. <br/> Default Depth is 1.                                 |
+| forEach()      | Executes a function for each array element. **returns undefined**                                  |
+| map()          | Creates a new array by applying a function to each element. **returns new array**                  |
+| filter()       | Creates a new array with elements that pass a test.  **Returns new array**                          |
 | reduce()       | Reduces the array to a single value by executing a function on each element |
 | find()         | Returns the first element that satisfies a test                             |
 | findIndex()    | Returns the index of the first element that satisfies a test                |
 | sort()         | Sorts the elements of the array                                             |
-| reverse()      | Reverses the order of the elements                                          |
-| includes()     | Checks if an array contains a certain value                                 |
-| indexOf()      | Returns the first index of a specified element                              |
+| reverse(callbackFn, initialVal)      | Reverses the order of the elements                                          |
+| includes(value, fromIndex)     | Checks if an array contains a certain value. fromIndex - optional, index from where value must be looked from. default = 0                                  |
+| indexOf(value, fromIndex)      | Returns the first index of a specified element                              |
 | from()         | Creates an array from an iterable or array-like object                      |
 | entries()      | Returns an iterator with key/value pairs                                    |
 | keys()         | Returns an iterator with the keys (indexes)                                 |
+
+```js
+//Usage
+let arr=['a','b','c'];
+arr.length;                   //3
+
+//Creating String from Array
+arr.toString();               //'a,b,c'
+arr.at(2);                    //"c"
+arr.join('-');                //"a-b-c"
+
+// Adding, Removing elements
+arr.pop();                    //"c"
+arr.push('x');                //['a','b','x']
+arr.shift();                  //"a"
+arr.unshift("1");             //['1','b','x']
+arr.concat(['e','f','g']);    //['1','b','x','e','f','g'] 
+arr.slice(-2)        //['f','g']
+arr.slice()          // ['1','b','x','e','f','g']- full shallow copy
+arr.splice(1,2,'a','b');   //['1','a','b','e','f','g']
+arr.copyWithin(0,1,3);        // ['a','b','b','e','f','g']
+
+//Checks array for certain Value
+arr.includes('e',4)        //false
+array.indexOf('b')      //1
+array.indexOf('b',2)    //2
+
+//Nested Arr
+arr=[1,2,3,[4,5,[6,[7]]]];
+arr.flat();                   // [1,2,3,4,5,[6,[7]]]        
+arr.flat(3);                  // [1,2,3,4,5,6,7] or arr.flat(Infinite)
+arr.flat(Infinity);     //flatens infinely nested array.
+
+//Iterating & Transforming : work on callback functions
+arr=[1,2,3];
+arr.forEach(num => console.log(num * 2));  //  2 4 6
+arr.map(num => num * 2); // [2, 4, 6]
+arr.filter(num => num % 2 === 0); // [2, 4]
+arr.reduce((acc, curr) => acc + curr, 0); // 6
+[5, 12, 18].find(num => num > 10); // 12
+[5, 12, 8].findIndex(num => num > 10);        // 1
+[4, 2, 10, 1].sort((a, b) => a - b);  // [1, 2, 4, 10]
+[1, 2, 3].reverse()  // [3, 2, 1]
+
+// Creating arrays
+Array.from("hello");    // ['h', 'e', 'l', 'l', 'o']
+
+const set = new Set([1, 2, 3]);
+const arr = Array.from(set);
+console.log(arr); // [1, 2, 3]
+
+const arr = ['a', 'b', 'c'];
+const iterator = arr.entries();
+
+for (const [index, value] of iterator) {
+  console.log(index, value);
+}
+// Output:
+// 0 'a'
+// 1 'b'
+// 2 'c'
+
+const keys = arr.keys();
+
+for (const key of keys) {
+  console.log(key);
+}
+// Output:
+// 0
+// 1
+// 2
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+28. ### How reduce method works?
+
+   ```js
+   let arr=[1,2,3,4];
+   arr.reduce((acc, curr) => acc + curr, initialVal);    //10
+   ```
+
+   `acc`: initialVal =  0;
+   reduce goes through each element, & `acc` = `acc`+`curr`
+   ```js
+   curr=1; acc = 0 + 1
+   curr=2; acc = 1 + 2
+   curr=3; acc = 3 + 3
+   curr=4; acc = 6 + 4
+   acc=10; //returns
+   ```
+   **[⬆ Back to Top](#table-of-contents)**
 
 
 
