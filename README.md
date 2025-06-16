@@ -35,7 +35,7 @@ Each question is answered briefly and clearly to help with interview prep and re
 | 25 | [What is Prototypal Inheritance?](#what-is-prototypal-inheritance) |
 | 26 | [What are Indexed Collections in React?](#what-are-indexed-collections-in-react) |
 | 27 | [What are Arrays in Js? What are its methods?](#what-are-arrays-in-js-what-are-its-methods) |
-| 28 | [How reduce method works?](#how-reduce-methods-works) |
+| 28 | [How reduce method works?](#how-reduce-method-works) |
 | 29 | [](#) |
 | 30 | [](#) |
 | 31 | [](#) |
