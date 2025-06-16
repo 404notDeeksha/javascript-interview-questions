@@ -26,6 +26,7 @@ Each question is answered briefly and clearly to help with interview prep and re
 | 16 | [What is Short Circuit Evaluation In js?](#what-is-short-circuit-evaluation-in-js) |
 | 17 | [What are Spread & Rest Operators?](#what-are-spread--rest-operators) |
 | 18 | [What is Loose Equality & Strict Equality Operators in Js?](#what-is-loose-equality--strict-equality-operators-in-js) |
+|    |   FUNCTIONS                                                                                                                                |
 | 19 | [What are Functions? What are ways to define them?](#what-are-functions-what-are-ways-to-define-them) |
 | 20 | [What is a Callback Function?](#what-is-a-callback-function) |
 | 21 | [What are Higher Order Functions(HOCs)?](#what-are-higher-order-functions(hocs)) |
