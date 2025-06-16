@@ -30,9 +30,9 @@ Each question is answered briefly and clearly to help with interview prep and re
 | 20 | [What is a Callback Function?](#what-is-a-callback-function) |
 | 21 | [What are Higher Order Functions(HOCs)?](#what-are-higher-order-functions(hocs)) |
 | 22 | [What are Closures?](#what-are-closures) |
-| 23 | [What are Operators in js?](#what-are-operators-in-js) |
-| 24 | [](#) |
-| 25 | [](#) |
+| 23 | [What are Objects in JS? What are ways to create it?](#what-are-operators-in-js) |
+| 24 | [What is Object Prototype?](#) |
+| 25 | [What is Prototypal Inheritance?](#) |
 | 26 | [](#) |
 | 27 | [](#) |
 | 28 | [](#) |
@@ -500,7 +500,7 @@ Each question is answered briefly and clearly to help with interview prep and re
       const closureExample = outerFunction();
       closureExample(); // Output: I am from the outer function
       ```
-   **[⬆ Back to Top](#table-of-contents)**
+      **[⬆ Back to Top](#table-of-contents)**
 
 23. ### What are Objects in JS? What are ways to create it?
 
@@ -538,10 +538,14 @@ Each question is answered briefly and clearly to help with interview prep and re
             Object.assign() to copy properties from one or more objects to a new object.
             Object.fromEntries() to create objects from key-value pairs
 
+      **[⬆ Back to Top](#table-of-contents)**         
+
 24. ### What is Object Prototype?
 
       Every JavaScript object has a prototype, which is another object that it inherits properties and methods from. The prototype acts as a template object that other objects can inherit from. This is the foundation of JavaScript's **inheritance model**. <br/>
       e.g.: objects created with a *constructor function* inherit from that *constructor's prototype property*.<br/> Built-in types like Array and Date have their own prototypes (Array.prototype, Date.prototype), which in turn inherit from *Object.prototype*
+
+      **[⬆ Back to Top](#table-of-contents)**   
 
 25. ### What is Prototypal Inheritance?
 
@@ -555,7 +559,11 @@ Each question is answered briefly and clearly to help with interview prep and re
       const animal = { eats: true };
       const rabbit = Object.create(animal);
       console.log(rabbit.eats); // true (inherited from animal)
-      ```   
+      ```  
+
+      **[⬆ Back to Top](#table-of-contents)**
+
+26.       
    
 
 
