@@ -576,7 +576,9 @@ Each question is answered briefly and clearly to help with interview prep and re
          </ul>
          );
       ```  
-      >Unique key is to be used for each element when rendering lists.   
+      >Unique key is to be used for each element when rendering lists. 
+
+      **[⬆ Back to Top](#table-of-contents)**  
 
 27. ### What are Arrays in Js? What are its methods?
 
