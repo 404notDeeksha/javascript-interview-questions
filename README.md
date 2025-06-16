@@ -563,8 +563,51 @@ Each question is answered briefly and clearly to help with interview prep and re
 
       **[⬆ Back to Top](#table-of-contents)**
 
-26.       
-   
+26.  What are Indexed Collections in React?
+
+      These are data structures where elements are stored and accessed using numerical indexes. In JavaScript (and therefore in React), the most common indexed collection is the array, which renders list of elements. e.g. map() 
+      ```js
+      const items = ["Apple", "Banana", "Cherry"];
+      return (
+         <ul>
+         {items.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+         </ul>
+         );
+      ```  
+      >Unique key is to be used for each element when rendering lists.   
+
+27. ### What are Arrays in Js? What are its methods?
+
+   | Method         | Description                                                                 |
+|----------------|-----------------------------------------------------------------------------|
+| length         | Returns the number of elements in the array                                 |
+| toString()     | Converts the array to a comma-separated string                              |
+| at()           | Returns the element at a given index                                        |
+| join()         | Joins all elements into a string with a specified separator                 |
+| pop()          | Removes and returns the last element                                        |
+| push()         | Adds one or more elements to the end                                        |
+| shift()        | Removes and returns the first element                                       |
+| unshift()      | Adds one or more elements to the beginning                                  |
+| concat()       | Merges arrays and/or values into a new array                                |
+| slice()        | Returns a shallow copy of a portion of the array                            |
+| splice()       | Adds/removes/replaces elements at a specified index                         |
+| copyWithin()   | Copies part of the array to another location in the same array              |
+| flat()         | Flattens nested arrays into a single array                                  |
+| forEach()      | Executes a function for each array element                                  |
+| map()          | Creates a new array by applying a function to each element                  |
+| filter()       | Creates a new array with elements that pass a test                          |
+| reduce()       | Reduces the array to a single value by executing a function on each element |
+| find()         | Returns the first element that satisfies a test                             |
+| findIndex()    | Returns the index of the first element that satisfies a test                |
+| sort()         | Sorts the elements of the array                                             |
+| reverse()      | Reverses the order of the elements                                          |
+| includes()     | Checks if an array contains a certain value                                 |
+| indexOf()      | Returns the first index of a specified element                              |
+| from()         | Creates an array from an iterable or array-like object                      |
+| entries()      | Returns an iterator with key/value pairs                                    |
+| keys()         | Returns an iterator with the keys (indexes)                                 |
 
 
 
