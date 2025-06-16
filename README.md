@@ -31,6 +31,18 @@ Each question is answered briefly and clearly to help with interview prep and re
 | 21 | [What are Higher Order Functions(HOCs)?](#what-are-higher-order-functions(hocs)) |
 | 22 | [What are Closures?](#what-are-closures) |
 | 23 | [What are Operators in js?](#what-are-operators-in-js) |
+| 24 | [](#) |
+| 25 | [](#) |
+| 26 | [](#) |
+| 27 | [](#) |
+| 28 | [](#) |
+| 29 | [](#) |
+| 30 | [](#) |
+| 31 | [](#) |
+| 32 | [](#) |
+| 33 | [](#) |
+| 34 | [](#) |
+| 35 | [](#) |
 
 
 
@@ -253,6 +265,13 @@ Each question is answered briefly and clearly to help with interview prep and re
       | **Type**               | `typeof`, `instanceof`                          | Check or test data types                    |
       | **Optional Chaining**       | `obj?.prop`, `arr?.[index]`, `func?.()`            | Safely access nested properties, array items, or call functions without throwing an error if an intermediate value is `null` or `undefined` |
       | **Nullish Coalescing**      | `a ?? b`                                           | Returns `a` if it's not `null` or `undefined`, otherwise returns `b` (useful for setting default values only when the left side is truly "missing") |
+
+      ```js
+      let number = 0;
+      console.log(number++); //0 number=1 (i++ allows time to increment number later & executes code now)
+      console.log(++number); //2 number=2 (++i doesnt allow time. it has to increment first, then execute code)
+      console.log(number); //2 
+      ```
 
    **[⬆ Back to Top](#table-of-contents)**      
 
@@ -482,6 +501,63 @@ Each question is answered briefly and clearly to help with interview prep and re
       closureExample(); // Output: I am from the outer function
       ```
    **[⬆ Back to Top](#table-of-contents)**
+
+23. ### What are Objects in JS? What are ways to create it?
+
+      Objects in JavaScript are **collections of properties**, where each *property is a key-value pair*. The value can be any type, including functions (which are then called methods). Objects are used to represent real-world entities and more complex data structures, allowing you to group related data and behavior together. <br/>
+
+      Ways to create an Object are: <br/>
+      1. **Object Literal** : 
+         ```js
+         const person = { firstName: "John", lastName: "Doe", age: 50, eyeColor: "blue" };
+         ```
+      2. **Using `new Object()` Syntax**: This creates an empty object, then properties are added.
+         ```js
+         const person = new Object(); // creates person = {}
+         person.firstName = "John";
+         person.lastName = "Doe";
+         person.age = 50;
+         person.eyeColor = "blue";
+         ```
+      3. **Constructor Functions**: This pattern is used for creating multiple similar objects.
+         ```js
+         function Person(first, last, age, eyeColor) {
+         this.firstName = first;
+         this.lastName = last;
+         this.age = age;
+         this.eyeColor = eyeColor;
+         }
+         const myFather = new Person("John", "Doe", 50, "blue");
+         ```
+      4. **`Object.create()`**:  This method creates a new object with the specified prototype.
+         ```js
+         const personPrototype = { greet() { console.log("hello!"); } };
+         const carl = Object.create(personPrototype);
+         ```
+      5.  Others: 
+            Object.assign() to copy properties from one or more objects to a new object.
+            Object.fromEntries() to create objects from key-value pairs
+
+24. ### What is Object Prototype?
+
+      Every JavaScript object has a prototype, which is another object that it inherits properties and methods from. The prototype acts as a template object that other objects can inherit from. This is the foundation of JavaScript's **inheritance model**. <br/>
+      e.g.: objects created with a *constructor function* inherit from that *constructor's prototype property*.<br/> Built-in types like Array and Date have their own prototypes (Array.prototype, Date.prototype), which in turn inherit from *Object.prototype*
+
+25. ### What is Prototypal Inheritance?
+
+      It is the mechanism by which objects in JavaScript *inherit properties and methods* from other objects via their *prototype chain*. When you access a property or method on an object, JavaScript will look for it on the object itself. If it's not found, it will *look up the prototype chain* until it finds it or reaches the end (Object.prototype).
+
+         1. Objects can inherit directly from other objects.
+         2. The prototype chain allows for shared behavior and code reuse.
+         3. Prototypal inheritance can be implemented using Object.create(), constructor functions, or the __proto__ property.
+
+      ```js
+      const animal = { eats: true };
+      const rabbit = Object.create(animal);
+      console.log(rabbit.eats); // true (inherited from animal)
+      ```   
+   
+
 
 
 
