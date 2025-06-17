@@ -38,13 +38,12 @@ Each question is answered briefly and clearly to help with interview prep and re
 | 27 | [What are Arrays in Js? What are its methods?](#what-are-arrays-in-js-what-are-its-methods) |
 | 28 | [How reduce method works?](#how-reduce-method-works) |
 | 29 | [What are Array like Objects in Js?](#what-are-array-like-objects-in-js) |
-<!--| 30 | [](#) |
-| 31 | [](#) |
-| 32 | [](#) |
+| 30 | [What are JavaScript Loops?](#what-are-javascript-loops) |
+| 31 | [What is Lexical Scoping in Js?](#what-is-lexical-scoping-in-js) |
+<!--| 32 | [](#) |
 | 33 | [](#) |
 | 34 | [](#) |
 | 35 | [](#) | -->
-
 
 
 1. ### What is javascript?
@@ -749,7 +748,7 @@ for (const key of keys) {
 
    **[⬆ Back to Top](#table-of-contents)** 
 
-30. What are JavaScript Loops?   
+30. ### What are JavaScript Loops?   
 
    Loops in JavaScript allow you to execute a block of code multiple times, making it easier to work with collections like arrays or to repeat tasks until a condition is met.
 
