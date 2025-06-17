@@ -18,23 +18,23 @@ Each question is answered briefly and clearly to help with interview prep and re
 | 8   | [What is difference between var, let & const?](#what-is-difference-between-var-let--const)                                                                                      |
 | 9   | [What is Hoisting?](#what-is-hoisting)                                                                                    |
 | 10  | [What are stages of Js Code processing?](#what-are-stages-of-js-code-processing)                                          |
-| 11 | [What is JSON?](#what-is-json)|
-| 12 | [What is typeof operator in Js?](#what-is-typeof-operator-in-js) |
-| 13 | [What is Type Casting & Type Coercion?](#what-is-type-casting--type-coercion) |
-| 14 | [What is Concatenation?](#what-is-concatenation) |
-| 15 | [What are Operators in js?](#what-are-operators-in-js) |
-| 16 | [What is Short Circuit Evaluation In js?](#what-is-short-circuit-evaluation-in-js) |
-| 17 | [What are Spread & Rest Operators?](#what-are-spread--rest-operators) |
-| 18 | [What is Loose Equality & Strict Equality Operators in Js?](#what-is-loose-equality--strict-equality-operators-in-js) |
-|    |   FUNCTIONS                                                                                                                                |
-| 19 | [What are Functions? What are ways to define them?](#what-are-functions-what-are-ways-to-define-them) |
-| 20 | [What is a Callback Function?](#what-is-a-callback-function) |
-| 21 | [What are Higher Order Functions(HOCs)?](#what-are-higher-order-functions(hocs)) |
-| 22 | [What are Closures?](#what-are-closures) |
-| 23 | [What are Objects in JS? What are ways to create it?](#what-are-operators-in-js) |
-| 24 | [What is Object Prototype?](#what-is-object-prototype) |
-| 25 | [What is Prototypal Inheritance?](#what-is-prototypal-inheritance) |
-| 26 | [What are Indexed Collections in React?](#what-are-indexed-collections-in-react) |
+| 11  | [What is JSON?](#what-is-json)|
+| 12  | [What is typeof operator in Js?](#what-is-typeof-operator-in-js) |
+| 13  | [What is Type Casting & Type Coercion?](#what-is-type-casting--type-coercion) |
+| 14  | [What is Concatenation?](#what-is-concatenation) |
+| 15  | [What are Operators in js?](#what-are-operators-in-js) |
+| 16   | [What is Short Circuit Evaluation In js?](#what-is-short-circuit-evaluation-in-js) |
+| 17  | [What are Spread & Rest Operators?](#what-are-spread--rest-operators) |
+| 18  | [What is Loose Equality & Strict Equality Operators in Js?](#what-is-loose-equality--strict-equality-operators-in-js) |
+|     |   FUNCTIONS                                                                                                                                |
+| 19  | [What are Functions? What are ways to define them?](#what-are-functions-what-are-ways-to-define-them) |
+| 20  | [What is a Callback Function?](#what-is-a-callback-function) |
+| 21  | [What are Higher Order Functions(HOCs)?](#what-are-higher-order-functions(hocs)) |
+| 22  | [What are Closures?](#what-are-closures) |
+| 23   | [What are Objects in JS? What are ways to create it?](#what-are-operators-in-js) |
+| 24   | [What is Object Prototype?](#what-is-object-prototype) |
+| 25   | [What is Prototypal Inheritance?](#what-is-prototypal-inheritance) |
+| 26   | [What are Indexed Collections in React?](#what-are-indexed-collections-in-react) |
 | 27 | [What are Arrays in Js? What are its methods?](#what-are-arrays-in-js-what-are-its-methods) |
 | 28 | [How reduce method works?](#how-reduce-method-works) |
 | 29 | [What are Array like Objects in Js?](#what-are-array-like-objects-in-js) |
@@ -56,7 +56,7 @@ Each question is answered briefly and clearly to help with interview prep and re
 
 3. ### What is role of js engine?
 
-   Js engine is a program in web browser which executes js code. In order to enable it, use js file under `<script>` tag in index.html file. <br/> Chrome - V8 <br/> Firefox - spiderMonkey <br/> Safari - Js core <br/> Edge - Chakra
+   Js engine is a program in web browser which **executes** js code. In order to enable it, use js file under `<script>` tag in index.html file. <br/> Chrome - V8 <br/> Firefox - spiderMonkey <br/> Safari - Js core <br/> Edge - Chakra
 
 4. ### What are the different data types in JavaScript?
 
@@ -67,39 +67,49 @@ Each question is answered briefly and clearly to help with interview prep and re
    ```js
    let x = { a: 1 };  // x points to object1 in memory
    let y = x;         // y also points to object1
-   x = { b: 2 };      // x now points to object2; y still points to previous reference of x, object1   (Reassignment)
+   x = { b: 2 };      // x now points to object2; y still points to previous reference of x, object1 (Reassignment)
 
 
    let x = { a: 1 };  // x points to object1 in memory
    let y = x;         // y also points to object1
-   x.a = 2;      // Mutation This changes x & thus y too. 
+   x.a = 2;      // Mutation. This changes x & thus y too. 
    ```
 
    **[⬆ Back to Top](#table-of-contents)**
 
 5. ### What is Imperative & Declarative Programming in Javascript?
 
-    **Imperative** : This style of programming gives step by step instructions for how to achieve goals. main focus is on sequence of operations & control flow.<br/>eg: C, Python, Java, DSA use this approach.<br/><br/> `let results = [];`<br/>`for (let num of collection) {`<br/>    `if (num % 2 !== 0) {`<br/>    `results.push(num);`<br/>`}`<br/>`}`<br/><br/> **Declarative**:  This style of programming focuses on desired outcome & letting system decide how to do it. <br/> eg: SQL, HTML< React's JSX use this format.<br/><br/> `let results = collection.filter(num => num % 2 !== 0);`<br/>
+    **Imperative** : This style of programming gives step by step instructions for how to achieve goals. main focus is on *sequence of operations & control flow*.<br/>eg: C, Python, Java, DSA use this approach.<br/><br/> `let results = [];`<br/>`for (let num of collection) {`<br/>    `if (num % 2 !== 0) {`<br/>    `results.push(num);`<br/>`}`<br/>`}`<br/><br/> **Declarative**:  This style of programming focuses on desired outcome & letting system decide how to do it. <br/> eg: SQL, HTML, React's JSX use this format.<br/> `let results = collection.filter(num => num % 2 !== 0);`<br/>
 
    **[⬆ Back to Top](#table-of-contents)**    
 
 6. ### What is Client side Rendering & Server side Rendering?  
 
-   In *Client Side Rendering*, *browser* is responsible for rendering the web page. The server sends a basic HTML File & a Js bundle (after site has been deployed on a server). Browser runs the Js bundle which generates & displays UI. After Initial load, all updates & navigation happen in browser using Js. without reloading entire page. <br/><ul><li> It reduces Server load, as server mainly handles API/ data requests & not page rendering. <li> It leads to Interactive , dynamic user Experience, smoother navigation & real time updates.<li>It also means slower initial load times, because browser needs to download & exceute Js before showing content & SEO Challenges as search engines may find indexing content difficult on client-side.</ul> <br/><br/>In *Server Side Rendering*, the server *generates the complete HTML for each page* and sends it to the browser. The browser *displays the page immediately*, and then JavaScript can take over for further interactivity. <br/> For each new page request, server renders React Component into HTML which is then sended over to client. Browser displays this HTML & React *hydrates* it to make it interactive. <ul><li> This means *faster Initial load times*, as browser recieves ready- to - go HTML.  <li> It means *SEO optimisation* as search engines can index pre-rendered content. <li> Better experience on slow networks as browser does less work here. <li> It also means, *Slower Navigation* as each new page needs a round trip to server, more server resources & more complex development & deployment.</ul><br/><br/> Note: **Hydration** is only used with SSR. In this, when HTML from server is loaded by browser on client side, React *matches it with its V-DOM*, attaches *event handlers & listeners* to existing HTML elements & *takes over DOM management* from here onwards. It brings interactivity & performance in SSR apps as full UI re-render is not needed & SEO optimisation also takes place.
+   In *Client Side Rendering*, *browser* is responsible for rendering the web page. The server sends a basic HTML File & a Js bundle (after site has been deployed on a server). Browser runs the Js bundle which generates & displays UI. After Initial load, all updates & navigation happen in browser using Js. without reloading entire page. <br/><ul><li> It reduces Server load, as server mainly handles API/ data requests & not page rendering. <li> It leads to Interactive , dynamic user Experience, smoother navigation & real time updates.<li>It also means slower initial load times, because browser needs to download & execute Js before showing content & SEO Challenges as search engines may find indexing content difficult on client-side.</ul> <br/><br/>In *Server Side Rendering*, the server *generates the complete HTML for each page* and sends it to the browser. The browser *displays the page immediately*, and then JavaScript can take over for further interactivity. <br/> For each new page request, server renders React Component into HTML which is then sended over to client. Browser displays this HTML & React *hydrates* it to make it interactive. <ul><li> This means *faster Initial load times*, as browser recieves ready-to-go HTML.  <li> It means *SEO optimisation* as search engines can index pre-rendered content. <li> Better experience on slow networks as browser does less work here. <li> It also means, *Slower Navigation* as each new page needs a round trip to server, more server resources & more complex development & deployment.</ul>
+   > **Hydration** is only used with SSR. In this, when HTML from server is loaded by browser on client side, React *matches it with its V-DOM*, attaches *event handlers & listeners* to existing HTML elements & *takes over DOM management* from here onwards. It brings *interactivity & performance* in SSR apps as full UI re-render is not needed & SEO optimisation also takes place.
 
    **[⬆ Back to Top](#table-of-contents)**   
 
 7. ### What is scope in Js?
 
-   Scope means *current context* of *execution in which variables, objects & functions* are *accessible* in the code. <br/> <ol><li> **Global scope**: Variables declared outside of any function or block are in global scope. They can be accessed from anywhere. <li> **Function (Local) Scope**: Variables declared inside a function are only accessible within that function. They cannot be accessed from anywhere outside the function.<br/> Variables declared with var data type are function scoped. <li> **Block Scope**: Introduced in ES6, Variables declared with let and const inside a block (eg., within {}, for loops, if statements, etc.) are only accessible within that block. <li> Module Scope: While using Js modules, variables declared inside a module are only accessible within that module unless explicitly exported.</ol><br/> Note: <ul><li>Scopes work in hierarchy. Inner(child) scopes can access Outer(Parent) scope, not vice versa. <li> Variable Shadowing: Variables under same name can be declared under different scopes. </ul><br/> `let x = 1; // Global scope` <br/><br/> `function exampleFunction() {`      <br/> 
-   `let x = 2; // Function scope` <br/> 
-    `if (true) {` <br/>
-        `let x = 3; // Block scope` <br/> 
-           `console.log(x); // 3` <br/>
-             `}` <br/>
-  `console.log(x); // 2` <br/>
-  `}` <br/><br/>`exampleFunction();` <br/>
-  `console.log(x); // 1` <br/>
+   Scope means *current context* of *execution in which variables, objects & functions* are *accessible* in the code. <br/> <ol><li> **Global scope**: Variables declared outside of any function or block are in global scope. They can be accessed from anywhere. <li> **Function (Local) Scope**: Variables declared inside a function are only accessible within that function. They cannot be accessed from anywhere outside the function.<br/> Variables declared with var data type are function scoped. <li> **Block Scope**: Introduced in ES6, Variables declared with let and const inside a block (eg., within {}, for loops, if statements, etc.) are only accessible within that block. <li> Module Scope: While using Js modules, variables declared inside a module are only accessible within that module unless explicitly exported.</ol>
+   > Scopes work in hierarchy. Inner(child) scopes can access Outer(Parent) scope, not vice versa.
+   Variable Shadowing: Variables under same name can be declared under different scopes. 
+   
+   ```js
+   let x = 1;  // Global scope
+
+   function exampleFunction() {
+      let x = 2; // Function scope 
+      if (true) {
+        let x = 3; // Block scope 
+          console.log(x); // 3
+         }
+      console.log(x); // 2
+   }
+   exampleFunction();
+   console.log(x); // 1
+   ```
 
    **[⬆ Back to Top](#table-of-contents)**  
 
@@ -115,7 +125,7 @@ Each question is answered briefly and clearly to help with interview prep and re
    | Use Case        | Legacy code, old browsers          | Modern JS, variables that change      | Constants, values that never change        |
    
    **Hoisting** <br/>
-   **var**: <br/> It is an implicit(default) keyword.<br/>
+   **var**: <br/> It is an implicit (default) keyword.<br/>
    `console.log(a); // Output: undefined`<br/>
    `var a = 10; // or a=10;`<br/>
    `console.log(a); // Output: 10`<br/><br/>
@@ -708,8 +718,36 @@ for (const key of keys) {
 
 29. ### What are Array like Objects in Js?
 
+   Array-like objects are objects that have *indexed elements* (properties with numeric keys) and a *non-negative length property*, similar to arrays. However, they *do not inherit* from Array.prototype and therefore *lack built-in array methods* like push(), pop(), map(), and forEach().<br/> **Features**:
+   - Indexed access: Elements can be accessed using numeric indices (e.g., obj, obj[1]).
+   - Length property: They have a length property indicating the number of elements.
+   - No array methods: They do not have array methods such as push(), pop(), map(), or forEach().
+   - Not true arrays: Array.isArray(arrayLikeObject) returns false.<br/>
+   e.g.:<br/>
+   - arguments object: Available inside functions, contains all arguments passed to the function.
+   - DOM collections: Such as NodeList (from document.querySelectorAll) and HTMLCollection (from document.getElementsByTagName).
+   - Strings: While strings are primitives, they behave like array-like objects because you can access characters by index.
 
+   ```js
+   let arrayLike = { 0: 'apple', 1: 'banana', 2: 'cherry', length: 3 };
+   console.log(arrayLike[1]); // 'banana'
+   console.log(arrayLike.length); // 3
+   console.log(Array.isArray(arrayLike)); // false
 
+   function showArguments() {
+      console.log(arguments); // {0: ..., 1: ..., length: ...}
+   }
+   showArguments('a', 'b', 'c');
+ 
+   let divs = document.querySelectorAll('div');
+   console.log(divs); // NodeList {0: ..., 1: ..., length: ...}
+   ```
+   <br/> **Converting Array-like Objects to Arrays**:
+   - Spread operator: [...arrayLikeObject]
+   - Array.from(): Array.from(arrayLikeObject)
+   - Object.values(): Object.values(arrayLikeObject) (for objects with numeric keys)
+
+30. 
 
 
 
