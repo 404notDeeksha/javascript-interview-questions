@@ -797,11 +797,11 @@ for (const key of keys) {
    **Lexical Scoping and Closures**
    Closures are functions that "remember" their lexical scope, even after the outer function has finished executing. This allows inner functions to retain access to variables from their parent scopes.
    ```js
-      function counter() {
-       let count = 0;
-        return function() {
-       count++;
-       console.log(count);
+   function counter() {
+     let count = 0;
+      return function() {
+      count++;
+      console.log(count);
      }
    }
    const increment = counter();
