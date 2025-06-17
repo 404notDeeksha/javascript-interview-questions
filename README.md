@@ -747,8 +747,101 @@ for (const key of keys) {
    - Array.from(): Array.from(arrayLikeObject)
    - Object.values(): Object.values(arrayLikeObject) (for objects with numeric keys)
 
-30. 
+   **[⬆ Back to Top](#table-of-contents)** 
+
+30. What are JavaScript Loops?   
+
+   Loops in JavaScript allow you to execute a block of code multiple times, making it easier to work with collections like arrays or to repeat tasks until a condition is met.
+
+   | Loop Type   | Description                                                                              | Common Use Case                                  |
+|----------------|--------------------------------------------------------------------------------------------|--------------------------------------------------|
+| `for`          | Runs code a specific number of times, with initialization, condition, and increment steps  | Iterating over arrays with known length          |
+| `while`        | Runs code as long as a condition is true (condition checked before each iteration)          | When the number of iterations is not known       |
+| `do...while`   | Like `while`, but always runs the code block at least once (condition checked after)        | At least one execution required                  |
+| `for...in`     | Iterates over the enumerable properties of an object                                        | Looping through object keys                      |
+| `for...of`     | Iterates over the values of an iterable object (like arrays, strings, etc.)                 | Looping through array or iterable values         |
+
+## Loop Control Statements
+
+| Statement     | Purpose                                   |
+|---------------|-------------------------------------------|
+| `break`       | Terminates the loop immediately           |
+| `continue`    | Skips to the next iteration of the loop   |
+| Labeled loops | Control flow in nested loops 
+
+   **[⬆ Back to Top](#table-of-contents)** 
+
+31. ### What is Lexical Scoping in Js?
+
+   Lexical scoping (also called static scoping) is a fundamental concept in JavaScript that determines how variable names are resolved in nested functions. In lexical scoping, the scope of a variable is determined by its position within the source code—specifically, where it is declared—not by where or how functions are called.
+
+   **How it works?**
+   -When a function is defined inside another function, the inner function has access to variables declared in its own scope as well as in all of its outer (parent) scopes, up to the global scope.-This relationship is established at the time of function declaration, not at the time of function invocation.
+
+   ```js
+   function outerFunction() {
+     let outerVariable = 'I am outside!';
+     function innerFunction() {
+      outerVar
+       console.log(outerVariable); // 'I am outside!'
+     }
+     innerFunction();
+   }
+   outerFunction();
+   ```
+
+   **Scope Chain**:
+   When JavaScript looks up a variable, it starts in the current scope. If the variable isn't found, it moves up to the parent scope, and continues this process until it reaches the global scope or finds the variable.
+
+   > JavaScript uses lexical scope, so functions always have access to variables where they were defined, not where they are called.
+
+   **Lexical Scoping and Closures**
+   Closures are functions that "remember" their lexical scope, even after the outer function has finished executing. This allows inner functions to retain access to variables from their parent scopes.
+   ```js
+      function counter() {
+       let count = 0;
+        return function() {
+       count++;
+       console.log(count);
+     }
+   }
+   const increment = counter();
+   increment(); // 1
+   increment(); // 2
+   ```
+
+   **Tricky Question**:
+   ```js
+   let funcs = [];
+   for (var i = 0; i < 3; i++) {
+     funcs.push(function() {
+       console.log(i);
+     });
+   }
+   funcs[0]();
+   funcs[1]();
+   funcs[2]();
+   //Output: 
+   //3
+   //3
+   //3
+   //if i -> let , output => 0 1 2
+
+   let funcs = [];
+
+   for (var i = 0; i < 3; i++) {
+     (function(j) {
+       funcs.push(function() {
+         console.log(j);
+       });
+     })(i);
+   }
+
+   funcs[0](); // 0
+   funcs[1](); // 1
+   funcs[2](); // 2
+   ```
 
 
 
-            
+
