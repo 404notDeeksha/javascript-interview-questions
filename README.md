@@ -430,11 +430,11 @@ Each question is answered briefly and clearly to help with interview prep and re
          ```
          | Feature  | Constructor Function  | Regular Function     |
          |------------------------|-----------------------------------------------------------------|-------------------------------------------|
-| Naming Convention      | Starts with an uppercase letter (e.g., `ListNode`, `Person`)    | Usually lowercase or camelCase            |
-| Usage                  | Called with the `new` keyword                                   | Called directly by name                   |
-| Purpose                | Creates and initializes new objects                             | Performs a task, returns a value, etc.    |
-| `this` Context         | Refers to the new object being created                          | Refers to the calling context or is undefined in strict mode |
-| Return Value           | Returns the new object by default                               |       Returns whatever is explicitly returned   |
+         | Naming Convention      | Starts with an uppercase letter (e.g., `ListNode`, `Person`)    | Usually lowercase or camelCase            |
+         | Usage                  | Called with the `new` keyword                                   | Called directly by name                   |
+         | Purpose                | Creates and initializes new objects                             | Performs a task, returns a value, etc.    |
+         | `this` Context         | Refers to the new object being created                          | Refers to the calling context or is undefined in strict mode |
+         | Return Value           | Returns the new object by default                               |       Returns whatever is explicitly returned   |
 
          > creates function dynamically from a string of code. 
          >```js
