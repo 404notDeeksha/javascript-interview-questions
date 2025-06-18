@@ -424,8 +424,8 @@ Each question is answered briefly and clearly to help with interview prep and re
          const greet = new Function("name", "return 'Hello, ' + name;");
          greet("World"); // Returns "Hello, World"
          ```
-         <br/>
-         6. **Generator and Async Functions**: Special types of functions for advanced use cases:
+         
+         6. Generator and Async Functions: Special types of functions for advanced use cases:
             1. **Generator function**: uses function and yield.
             2. **Async function**: uses async and returns a Promise.
             ```js
