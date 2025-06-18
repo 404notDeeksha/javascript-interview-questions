@@ -418,29 +418,13 @@ Each question is answered briefly and clearly to help with interview prep and re
             }
          };
          ```
-
-         5. **Constructor Function**: Constructor functions in JavaScript are special functions used to **create and initialize objects**. While they are defined like regular functions, their primary purpose is to serve as blueprints for new objects.<br/> Constructor functions let you easily create multiple objects with the same structure and behavior, without repeating code.
+         5. Function Constructor: Used to dynamically create a new function from a string of code. defines function at runtime.
 
          ```js
-         export const ListNode = function(val, next) {
-          this.val = (val === undefined ? 0 : val)
-          this.next = (next === undefined ? null : next)
-         }
-         //Usage: let node = new ListNode(5, null);
-         ```
-         | Feature  | Constructor Function  | Regular Function     |
-         |------------------------|-----------------------------------------------------------------|-------------------------------------------|
-         | Naming Convention      | Starts with an uppercase letter (e.g., `ListNode`, `Person`)    | Usually lowercase or camelCase            |
-         | Usage                  | Called with the `new` keyword                                   | Called directly by name                   |
-         | Purpose                | Creates and initializes new objects                             | Performs a task, returns a value, etc.    |
-         | `this` Context         | Refers to the new object being created                          | Refers to the calling context or is undefined in strict mode |
-         | Return Value           | Returns the new object by default                               |       Returns whatever is explicitly returned   |
-
-         > creates function dynamically from a string of code. 
-         >```js
          const greet = new Function("name", "return 'Hello, ' + name;");
+         greet("World"); // Returns "Hello, World"
          ```
-<br/>
+         <br/>
          6. **Generator and Async Functions**: Special types of functions for advanced use cases:
             1. **Generator function**: uses function and yield.
             2. **Async function**: uses async and returns a Promise.
@@ -858,6 +842,22 @@ for (const key of keys) {
    funcs[2](); // 2
    ```
 
+<!-- 32. ### what are ways to create an object in js? -->
+<!-- 5. **Constructor Function**: Constructor functions in JavaScript are special functions used to **create and initialize objects**. While they are defined like regular functions, their primary purpose is to serve as blueprints for new objects.<br/> Constructor functions let you easily create multiple objects with the same structure and behavior, without repeating code.
 
+         ```js
+         export const ListNode = function(val, next) {
+          this.val = (val === undefined ? 0 : val)
+          this.next = (next === undefined ? null : next)
+         }
+         //Usage: let node = new ListNode(5, null);
+         ```
+         | Feature  | Constructor Function  | Regular Function     |
+         |------------------------|-----------------------------------------------------------------|-------------------------------------------|
+         | Naming Convention      | Starts with an uppercase letter (e.g., `ListNode`, `Person`)    | Usually lowercase or camelCase            |
+         | Usage                  | Called with the `new` keyword                                   | Called directly by name                   |
+         | Purpose                | Creates and initializes new objects                             | Performs a task, returns a value, etc.    |
+         | `this` Context         | Refers to the new object being created                          | Refers to the calling context or is undefined in strict mode |
+         | Return Value           | Returns the new object by default                               |       Returns whatever is explicitly returned   |
 
-
+ -->
