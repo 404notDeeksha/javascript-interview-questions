@@ -428,17 +428,18 @@ Each question is answered briefly and clearly to help with interview prep and re
          6. Generator and Async Functions: Special types of functions for advanced use cases:
             1. **Generator function**: uses function and yield.
             2. **Async function**: uses async and returns a Promise.
-            ```js
-            async function fetchData() {
+         ```js
+         async function fetchData() {
             const response = await fetch('https://api.example.com/data');
             const data = await response.json();
-            return data;
+               return data;
             }
 
             fetchData().then(data => {
-            console.log(data);
+                console.log(data);
             });
-            ```
+         ```
+         
          **[⬆ Back to Top](#table-of-contents)**
 
 20. ### What is a Callback Function?
