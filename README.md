@@ -231,7 +231,7 @@ Each question is answered briefly and clearly to help with interview prep and re
       Boolean(null);  // false
       Boolean(undefined) // false
       ```
-      2.**Type Coercion (Implicit Type Conversion)**: here, js automatically converts a value from one type to another as needed, usually during operations or comparisons.<br/> Often done when using operators like +, ==, or conditional statements.
+      2. **Type Coercion (Implicit Type Conversion)**: here, js automatically converts a value from one type to another as needed, usually during operations or comparisons.<br/> Often done when using operators like +, ==, or conditional statements.
 
       ```js
       let result = "5" + 2; // JavaScript concatenates with + operator if either operand is string -> 2 to "2", result is "52"
@@ -239,7 +239,7 @@ Each question is answered briefly and clearly to help with interview prep and re
       console.log([] == ![]);         // true
       // [] is truthy, but ![] is false. 
       // [] == false → [] coerced to "", false to 0, 
-      // "" == 0 → true[2].
+      // "" == 0 → true.
       console.log('d'-0);  //NaN
       // 'd'->string to number but string => number not possible
       // Nan-0 = Nan
@@ -282,6 +282,15 @@ Each question is answered briefly and clearly to help with interview prep and re
       console.log(number++); //0 number=1 (i++ allows time to increment number later & executes code now)
       console.log(++number); //2 number=2 (++i doesnt allow time. it has to increment first, then execute code)
       console.log(number); //2 
+      0 ?? "default"    // returns 0
+      0 || "default"    // returns "default"
+
+      "" ?? "default"   // returns ""
+      "" || "default"   // returns "default"
+
+      null ?? "default" // returns "default"
+      null || "default" // returns "default"
+
       ```
 
    **[⬆ Back to Top](#table-of-contents)**      
