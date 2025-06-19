@@ -208,7 +208,7 @@ Each question is answered briefly and clearly to help with interview prep and re
       typeof true;         // "boolean"
       typeof undefined;    // "undefined"
       typeof {a:1};        // "object"
-      typeof [1,2,3];      // "object"   // Arrays are also objects
+      typeof [1,2,3];      // "object"   // Arrays are also objects. so, Array.isArray(value) is preferred
       typeof null;         // "object"   // This is a known quirk in JavaScript
       typeof function(){}; // "function"
       ```
@@ -216,6 +216,7 @@ Each question is answered briefly and clearly to help with interview prep and re
       isNaN() returns true for non number values-which cant convert to numbers. true for number values.
       isNaN('a')  //true
       isNaN(2)    //false
+      isArray([])   //true
 
    **[⬆ Back to Top](#table-of-contents)**     
 
@@ -629,6 +630,7 @@ Each question is answered briefly and clearly to help with interview prep and re
 //Usage
 let arr=['a','b','c'];
 arr.length;                   //3
+new Array(arr.length);  //creates empty array with length = arr.length
 
 //Creating String from Array
 arr.toString();               //'a,b,c'
