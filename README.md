@@ -45,6 +45,15 @@ Each question is answered briefly and clearly to help with interview prep and re
 | 34 | [](#) |
 | 35 | [](#) | -->
 
+<!-- promises
+async,await 
+error handling
+asynchronous & synchronous operations
+call stack
+types of event handlers
+reactive programming
+ AJAX
+ -->
 
 1. ### What is javascript?
    Javascript is a programming language which is used to convert static web apps into interactive dynamic ones.
@@ -638,6 +647,7 @@ Each question is answered briefly and clearly to help with interview prep and re
 ```js
 //Usage
 let arr=['a','b','c'];
+arr[-1];                      //undefined
 arr.length;                   //3
 new Array(arr.length);  //creates empty array with length = arr.length
 
