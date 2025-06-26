@@ -55,7 +55,7 @@ reactive programming
  AJAX
  -->
 
-1. ### What is Javascript?  What is role of js engine?
+1. ### What is Javascript? What is role of js engine?
    Javascript is a programming language which is used to convert static web apps into interactive dynamic ones.
 
 2. ### What are its features?
