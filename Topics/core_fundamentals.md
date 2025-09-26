@@ -69,14 +69,14 @@ console.log("var a:", a);
 
 // LET
 let b = 10;
-// let b = 20; // SyntaxError: cannot redeclare
+~let b = 20;~ // SyntaxError: cannot redeclare
 b = 15;       // reassignment allowed
 console.log("let b:", b);
 
 // CONST
 const c = 100;
-// const c = 200; // SyntaxError: cannot redeclare
-// c = 300;       // TypeError: cannot reassign
+~~const c = 200;~~ // SyntaxError: cannot redeclare
+~c = 300;~       // TypeError: cannot reassign
 console.log("const c:", c);
 
 // ===== INITIALIZATION =====
@@ -143,5 +143,141 @@ console.log(+"42");     // 42 (string to number)
 
 - using `+`, `.join(patternToJoin)`, `.concat("new_string")`
 
-6. 
+6. **Equality (== vs ===)**: 
+
+- Loose Equality : `==`: checks equality with type coercion.
+- Strict Equality : `===`: checks equality without coercion (strict).
+
+```js
+console.log(0 == "0"); // true
+console.log(0 === "0"); // false
+console.log(null == undefined); // true
+console.log(null === undefined); // false
+```
+
+7. **Truthy & Falsy Values**:
+
+- Falsy values in JS: false, 0, -0, 0n (BigInt zero), "", null, undefined, NaN. Everything else is truthy.
+
+
+```js
+if ("hello") console.log("truthy"); // runs
+if (0) console.log("falsy"); // not run
+```
+
+8. **Pass by Value vs Pass by Reference**:
+
+- Primitives are copied by value.
+- Objects/Arrays/Functions are copied by reference (actually, reference itself is copied).
+
+```js
+let a = 10;
+let b = a;
+b = 20;
+console.log(a); // 10 (unchanged)
+
+let obj1 = { name: "Deeksha" };
+let obj2 = obj1;
+obj2.name = "Sharma";
+console.log(obj1.name); // "Sharma"
+```
+
+9. **Immutability of Primitives**: 
+
+Primitives can’t be altered directly. They are Immutable.  Assigning creates a new value.
+```js
+let str = "hello";
+str[0] = "H"; 
+console.log(str); // "hello" (unchanged)
+
+// Right way to do this is 
+let str = "hello";
+str = "H" + str.slice(1); 
+console.log(str); // "Hello"
+
+```
+
+10. **The typeof, instanceof, and Object.prototype.toString**: 
+
+- `typeof`: good for primitives, but quirks with null (null is an object).
+- `instanceof`: checks prototype chain. Good for objects, not primitives, because it works well with objects because it checks the prototype chain.
+- `Object.prototype.toString.call()`: accurate type check than above two.
+
+```js
+console.log(typeof []); // object
+console.log([] instanceof Array); // true
+123 instanceof Number;   // false (primitives fail)
+new Number(123) instanceof Number; // true (object wrapper)
+console.log(Object.prototype.toString.call([])); // [object Array]
+```
+> Prototype chain = the path JavaScript follows to find a property or method in parent objects.
+// Array - Path
+- arr  (your object)
+ │
+ ├─> Array.prototype   (methods like push, pop, map, toString…)
+ │
+ ├─> Object.prototype  (methods like hasOwnProperty, toString…)
+ │
+ └─> null   (end of the chain)
+
+11. **Undefined vs Null**:
+
+- `undefined`: variable declared but not assigned.
+- `null`: intentional absence of a value.
+
+```js
+let x;
+console.log(x); // undefined
+let y = null;
+console.log(y); // null
+```
+
+12. Function Declaration - Named Function with function keyword. Hoisted to top of its scope. `this` is dynamic — depends on the caller (global, object, or undefined in strict).   
+
+13. Function Expression - Function is assigned to a variable. can be named or anonymous. Not Hoisted because variable isnt hoisted. Allocated memory only at runtime (Execution Phase).
+
+14. Arrow Function - does not have its own `this` binding.  `this` is lexical — it’s locked to the this value of the scope where they were created (They lexically inherit this from where they were created.)
+
+- Strict mode only changes the global fallback: no auto-binding to window, instead this = undefined
+
+15. Default Parameter: used to avoid undefined. it gets executed only at runtime on fn call.
+
+```js
+function add(a = 0, b = 0) {
+  return a + b;
+}
+
+add(5); // 5 + 0 = 5
+```
+
+16. Rest Parameters: all extra arguements get packed in one array. different than arguements. 
+```js
+function sum(...nums) {
+  return nums.reduce((a, b) => a + b, 0);
+}
+
+// REST v/s Arguments
+
+function oldWay(a, b) {
+  console.log(arguments); // {0:1, 1:2, 2:3}
+}
+
+function newWay(a, b, ...rest) {
+  console.log(rest); // [3]
+}
+
+oldWay(1, 2, 3);  // gives array like object
+newWay(1, 2, 3);
+```
+
+17. Spread Operator - emptying the array /object items seperately. copies/ overwrites properties while merging.
+```js
+const obj1 = {a: 1, b: 2};
+const obj2 = {...obj1, b: 99};
+console.log(obj2); // {a:1, b:99}
+```
+
+18. 
+
+
 

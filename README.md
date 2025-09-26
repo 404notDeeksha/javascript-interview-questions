@@ -708,6 +708,7 @@ arr=[1,2,3];
 arr.forEach(num => console.log(num * 2));  //  2 4 6
 arr.map(num => num * 2); // [2, 4, 6]
 arr.filter(num => num % 2 === 0); // [2, 4]
+arr.every(char => char === 0); // return boolean. all elements in arr must validate callback fn
 arr.reduce((acc, curr) => acc + curr, 0); // 6
 [5, 12, 18].find(num => num > 10); // 12
 [5, 12, 8].findIndex(num => num > 10);        // 1
@@ -741,6 +742,16 @@ for (const key of keys) {
 // 0
 // 1
 // 2
+
+// Slice
+let s = "ABC";
+
+console.log(s.slice(0, 0)); // ""
+console.log(s.slice(0, 1)); // "A"
+console.log(s.slice(0, 2)); // "AB"
+console.log(s.slice(1, 2)); // "B"
+console.log(s.slice(1));    // "BC"
+
 ```
 
 **[⬆ Back to Top](#table-of-contents)**
