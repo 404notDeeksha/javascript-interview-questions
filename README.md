@@ -556,7 +556,30 @@ reactive programming
       const closureExample = outerFunction();
       closureExample(); // Output: I am from the outer function
       ```
-      **[⬆ Back to Top](#table-of-contents)**
+
+      > With var:
+      - Closure stores reference to the same variable
+      - That variable changes → all functions see latest value
+      With let:
+      - Closure stores different variable per iteration
+      - Each one is frozen to its own value
+        
+“In a for loop, let creates a new lexical environment for each iteration. Each function closes over a different binding of i, whereas var uses a single shared binding.”
+
+```js
+for (var i = 0; i < 3; i++) {
+  funcs.push(function() {
+    console.log(i);
+  });
+}
+
+for (let i = 0; i < 3; i++) {
+  funcs.push(function() {
+    console.log(i);
+  });
+}
+```  
+     **[⬆ Back to Top](#table-of-contents)**
 
 23. ### What are Objects in JS? What are ways to create it?
 
