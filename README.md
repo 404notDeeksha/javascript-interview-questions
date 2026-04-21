@@ -557,10 +557,10 @@ reactive programming
       closureExample(); // Output: I am from the outer function
       ```
 
-      > With var:
+With var:
       - Closure stores reference to the same variable
       - That variable changes → all functions see latest value
-      With let:
+With let:
       - Closure stores different variable per iteration
       - Each one is frozen to its own value
         
