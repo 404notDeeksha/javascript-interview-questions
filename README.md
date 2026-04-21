@@ -242,7 +242,7 @@ foo → ready
 console.log(a) → 10
 ```
 
-<li> 2. **Function Execution Context** (created each time a function is called, gets its own memory & own scope).
+<li> **Function Execution Context** (created each time a function is called, gets its own memory & own scope).
 
 ```js
 function greet(name) {
