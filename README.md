@@ -535,7 +535,7 @@ reactive programming
 
 22. ### What are Closures?
 
-      A closure in JavaScript is a feature where an inner function has *access to the variables and parameters of its outer (enclosing) function*—even after the outer function has finished executing.
+      A closure in JavaScript is a feature where an inner function has *access to the references (variables and parameters) of its outer (enclosing) function*—even after the outer function has finished executing.
       When a function is defined inside another function, the inner function forms a closure. <br/> The closure gives the inner function access to:
       
       1. Its own scope (variables defined inside it).
