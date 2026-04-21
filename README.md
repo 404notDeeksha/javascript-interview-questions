@@ -865,7 +865,7 @@ console.log(s.slice(1));    // "BC"
    }
    const increment = counter();
    increment(); // 1
-   increment(); // 2
+   increment(); // 2 closure remembers its Lexical scope even after outer fn (counter()) finishes execution
    ```
 
    **Tricky Question**:
