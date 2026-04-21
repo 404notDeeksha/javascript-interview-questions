@@ -571,13 +571,13 @@ for (var i = 0; i < 3; i++) {
   funcs.push(function() {
     console.log(i);
   });
-}
+} // 3 3 3
 
 for (let i = 0; i < 3; i++) {
   funcs.push(function() {
     console.log(i);
   });
-}
+} // 0 1 2
 ```  
      **[⬆ Back to Top](#table-of-contents)**
 
