@@ -16,7 +16,7 @@ For each new page request, server renders React Component into HTML which is the
 
 - This means faster Initial load times, as browser recieves ready-to-go HTML.
 - It means SEO optimisation as search engines can index pre-rendered content.
-- Better experience on slow networks as browser does less work here.
+- Better experience on slow networks as browser does less work here. 
 - It also means, Slower Navigation as each new page needs a round trip to server, more server resources & more complex development & deployment.
 
 > **Hydration** is only used with SSR. In this, when HTML from server is loaded by browser on client side, React matches it with its V-DOM, attaches event handlers & listeners to existing HTML elements & takes over DOM management from here onwards. It brings interactivity & performance in SSR apps as full UI re-render is not needed & SEO optimisation also takes place.

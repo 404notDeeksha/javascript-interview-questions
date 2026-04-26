@@ -15,7 +15,8 @@ Immutable, store single values:
 
 ## B. Non-Primitive
 
-1. **Object**: They are mutable, are used to store collection of data & more complex entities. eg: Objects(key-value pairs), Arrays(ordered collections), Functions, Dates, Maps, Sets, Regular Expressions(RegExp) etc.
+1. **Object**: They are mutable, are used to store collection of data & more complex entities. 
+eg: Objects(key-value pairs), Arrays(ordered collections), Functions, Dates, Maps, Sets, Regular Expressions(RegExp) etc.
 
 > They store value & hold reference to a memory location.
 
