@@ -110,6 +110,90 @@ boundGreet(); // "Hello, Deeksha"
 const button = document.querySelector('button');
 button.addEventListener('click', boundGreet);
 ```
+
+### Partial Application with bind()
+
+`bind()` also supports pre-setting arguments (currying/partial application):
+
+```js
+function multiply(a, b) {
+  return a * b;
+}
+
+const double = multiply.bind(null, 2);
+double(5); // 10
+double(10); // 20
+```
+
+## Polyfill for `bind()`
+
+A polyfill replicates native `bind()` behavior: returns a new function with `this` bound, supports partial application, and handles `new` keyword invocation.
+
+```js
+Function.prototype.myBind = function(context, ...args) {
+  const fn = this; // the function being bound
+
+  function boundFn(...newArgs) {
+    // If called with `new`, `this` is the new instance — ignore the bound context
+    if (this instanceof boundFn) {
+      return new fn(...args, ...newArgs);
+    }
+    return fn.apply(context, [...args, ...newArgs]);
+  }
+
+  // Preserve prototype chain for `new` usage
+  boundFn.prototype = Object.create(fn.prototype);
+
+  return boundFn;
+};
+
+//or
+
+Function.prototype.myBind = function(context) {
+  const fn = this;
+
+  return function(...args) {
+    return fn.apply(context, ...args);
+  };
+};
+
+```
+
+### How It Works
+
+1. **Capture `this`**: The function on which `myBind` is called (`fn`).
+2. **Return a wrapper**: `boundFn` merges pre-set arguments (`args`) with later arguments (`newArgs`).
+3. **`apply` for `this` binding**: Calls the original function with the bound `context`.
+4. **`new` keyword support**: If `boundFn` is invoked with `new`, the instance check (`this instanceof boundFn`) overrides the bound context and constructs a new object.
+5. **Prototype chain**: `Object.create(fn.prototype)` ensures instances created via `new boundFn()` inherit from the original function's prototype.
+
+### Usage Example
+
+```js
+function greet(greeting, punctuation) {
+  console.log(`${greeting}, ${this.name}${punctuation}`);
+}
+
+const user = { name: 'Deeksha' };
+
+// Basic binding
+const boundHello = greet.myBind(user, 'Hello');
+boundHello('!'); // "Hello, Deeksha!"
+
+// Partial application
+const boundHi = greet.myBind(user, 'Hi');
+boundHi('.'); // "Hi, Deeksha."
+
+// Constructor usage
+function Person(name) {
+  this.name = name;
+}
+
+const BoundPerson = Person.myBind(null, 'Default');
+const p = new BoundPerson(); // `new` overrides the `null` context
+console.log(p.name); // "Default"
+```
+
 ## Quick Comparison
 
 | Method  | Invokes Immediately | Argument Format    | Returns          |
