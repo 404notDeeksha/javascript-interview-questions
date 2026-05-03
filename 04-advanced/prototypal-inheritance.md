@@ -1,15 +1,170 @@
-# Prototypal Inheritance
+# Prototype & Prototypal Inheritance
 
-It is the mechanism by which objects in JavaScript inherit properties and methods from other objects via their prototype chain. When you access a property or method on an object, JavaScript will look for it on the object itself. If it's not found, it will look up the prototype chain until it finds it or reaches the end (Object.prototype).
+## What is a Prototype?
 
-## Key Points
+Every JavaScript object has a prototype, which is another object that it inherits properties and methods from. The prototype acts as a template object that other objects can inherit from. This is the foundation of JavaScript's inheritance model.
 
-1. Objects can inherit directly from other objects.
-2. The prototype chain allows for shared behavior and code reuse.
-3. Prototypal inheritance can be implemented using Object.create(), constructor functions, or the __proto__ property.
+**e.g.:** Objects created with a constructor function inherit from that constructor's `prototype` property. Built-in types like `Array` and `Date` have their own prototypes (`Array.prototype`, `Date.prototype`), which in turn inherit from `Object.prototype`.
+
+## What is Prototypal Inheritance?
+
+It is the mechanism by which objects in JavaScript inherit properties and methods from other objects via their prototype chain. When you access a property or method on an object, JavaScript will look for it on the object itself. If it's not found, it will look up the prototype chain until it finds it or reaches the end (`Object.prototype`).
+
+## Key Concepts
+
+### Prototype Chain
+- Every object has an internal link to another object called its **prototype** (`[[Prototype]]`)
+- Property lookup: own property → prototype → prototype's prototype → ... → `null`
+- Chain ends at `Object.prototype` (whose prototype is `null`)
+
+### `prototype` vs `__proto__` vs `[[Prototype]]`
+- `prototype` - property on **constructor functions** (sets `[[Prototype]]` for instances)
+- `__proto__` - deprecated getter/setter for `[[Prototype]]`
+- `[[Prototype]]` - internal link (accessed via `Object.getPrototypeOf()`)
+
+## Creating Inheritance
 
 ```js
+// 1. Object.create()
+const parent = { greet() { return "Hi"; } };
+const child = Object.create(parent);
+
+// 2. Constructor function
+function Person(name) { this.name = name; }
+Person.prototype.sayHi = function() { return this.name; };
+const p = new Person("Jay");
+
+// 3. ES6 classes (syntactic sugar over prototypes)
+class Animal { speak() { return "..."; } }
+class Dog extends Animal {}
+
+// 4. Direct object inheritance
 const animal = { eats: true };
 const rabbit = Object.create(animal);
 console.log(rabbit.eats); // true (inherited from animal)
 ```
+
+## Prototype Chaining
+
+Prototype chaining is the process JavaScript uses to look up properties on an object. When you access a property, JS traverses the chain of prototypes until it finds the property or reaches the end.
+
+### How Property Lookup Works
+
+```js
+function Animal(name) {
+  this.name = name;
+}
+Animal.prototype.speak = function() {
+  return `${this.name} makes a sound`;
+};
+
+function Dog(name, breed) {
+  Animal.call(this, name);
+  this.breed = breed;
+}
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+Dog.prototype.bark = function() {
+  return `${this.name} barks!`;
+};
+
+const dog = new Dog("Rex", "Labrador");
+
+// Lookup chain:
+// dog → Dog.prototype → Animal.prototype → Object.prototype → null
+
+dog.bark();     // Found on Dog.prototype
+dog.speak();    // Found on Animal.prototype (walks up the chain)
+dog.name;       // Found on dog itself (own property)
+dog.toString(); // Found on Object.prototype (top of chain)
+dog.unknown;    // undefined (reached end of chain)
+```
+
+### Building the Chain
+
+```js
+// Step 1: Base object
+const vehicle = { type: "vehicle", move() { return "moving..."; } };
+
+// Step 2: First level
+const car = Object.create(vehicle);
+car.wheels = 4;
+
+// Step 3: Second level
+const sportsCar = Object.create(car);
+sportsCar.speed = 200;
+
+// Chain: sportsCar → car → vehicle → Object.prototype → null
+sportsCar.wheels; // 4 (from car)
+sportsCar.move(); // "moving..." (from vehicle)
+```
+
+### Key Rules
+
+1. **Reads traverse the chain** - accessing properties walks up prototypes
+2. **Writes are always on the object itself** - setting a property creates it on the target object, never modifies the prototype
+3. **Shadowing** - setting a property with the same name as an inherited one creates an own property that "shadows" the inherited one
+4. **Performance** - long chains slow down property lookups; accessing properties far up the chain is slower
+
+### Shadowing Example
+
+```js
+const parent = { name: "Parent", greet() { return `Hi from ${this.name}`; } };
+const child = Object.create(parent);
+
+console.log(child.name);        // "Parent" (inherited)
+console.log("name" in child);   // true (found in chain)
+child.hasOwnProperty("name");   // false (not own)
+
+child.name = "Child";           // Creates own property (shadows)
+console.log(child.name);        // "Child" (own property)
+console.log(parent.name);       // "Parent" (unchanged)
+
+delete child.name;              // Removes own property
+console.log(child.name);        // "Parent" (falls back to prototype)
+```
+
+### Chain Visualization
+
+```
+dog (instance)
+  ↓ [[Prototype]]
+Dog.prototype
+  ↓ [[Prototype]]
+Animal.prototype
+  ↓ [[Prototype]]
+Object.prototype
+  ↓ [[Prototype]]
+null (end of chain)
+```
+
+### Checking the Chain
+
+```js
+const a = {};
+const b = Object.create(a);
+const c = Object.create(b);
+
+Object.getPrototypeOf(b) === a;  // true
+a.isPrototypeOf(c);              // true
+c instanceof Object;             // true
+```
+
+## Important Methods
+
+| Method | Description |
+|--------|-------------|
+| `Object.create(proto)` | Creates object with specified prototype |
+| `Object.getPrototypeOf(obj)` | Returns `[[Prototype]]` |
+| `Object.setPrototypeOf(obj, proto)` | Sets `[[Prototype]]` |
+| `obj.hasOwnProperty(prop)` | Checks own property (not inherited) |
+| `prop in obj` | Checks own + inherited properties |
+| `obj instanceof Constructor` | Checks prototype chain |
+
+## Key Points
+
+1. Objects can inherit directly from other objects
+2. The prototype chain allows for shared behavior and code reuse
+3. Prototypal inheritance can be implemented using `Object.create()`, constructor functions, or classes
+4. **Dynamic** - changes to prototype reflect on all inheriting objects
+5. All built-in types inherit from `Object.prototype`
