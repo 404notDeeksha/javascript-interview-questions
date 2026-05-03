@@ -168,3 +168,186 @@ c instanceof Object;             // true
 3. Prototypal inheritance can be implemented using `Object.create()`, constructor functions, or classes
 4. **Dynamic** - changes to prototype reflect on all inheriting objects
 5. All built-in types inherit from `Object.prototype`
+
+---
+
+## Most Asked Interview Questions
+
+### Q1: What is the difference between `prototype` and `__proto__`?
+
+```js
+function Person() {}
+const p = new Person();
+
+// p.__proto__ === Person.prototype  (true)
+// __proto__ is the actual object used as prototype
+// prototype is a property of the constructor function
+```
+
+**Answer:** `prototype` is a property on constructor functions that defines what `__proto__` will be for instances. `__proto__` is the actual internal link on an object to its prototype.
+
+---
+
+### Q2: What is the output?
+
+```js
+function A() {}
+function B() {}
+A.prototype = Object.create(B.prototype);
+const a = new A();
+
+console.log(a instanceof B);
+console.log(a instanceof A);
+console.log(a instanceof Object);
+```
+
+**Output:** `true`, `true`, `true`
+
+**Why:** `instanceof` checks the prototype chain. `a.__proto__` → `A.prototype` → `B.prototype` → `Object.prototype` → `null`.
+
+---
+
+### Q3: How does `Object.create(null)` differ from `{}`?
+
+```js
+const obj1 = {};
+const obj2 = Object.create(null);
+
+console.log(obj1.toString); // function (inherited from Object.prototype)
+console.log(obj2.toString); // undefined
+```
+
+**Answer:** `Object.create(null)` creates an object with **no prototype** at all. It doesn't inherit `toString`, `hasOwnProperty`, etc. Useful for pure dictionaries/maps.
+
+---
+
+### Q4: Implement inheritance without `class` keyword
+
+```js
+function Animal(name) {
+  this.name = name;
+}
+Animal.prototype.speak = function() {
+  return `${this.name} makes a sound`;
+};
+
+function Dog(name, breed) {
+  Animal.call(this, name); // call parent constructor
+  this.breed = breed;
+}
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+Dog.prototype.bark = function() {
+  return `${this.name} barks!`;
+};
+
+const d = new Dog("Rex", "Labrador");
+d.speak(); // "Rex makes a sound"
+d.bark();  // "Rex barks!"
+```
+
+---
+
+### Q5: What is prototypal vs classical inheritance?
+
+| Prototypal (JS) | Classical (Java/C++) |
+|-----------------|---------------------|
+| Objects inherit from objects | Classes inherit from classes |
+| Runtime composition | Compile-time blueprint |
+| Flexible, dynamic | Rigid hierarchy |
+| No classes needed (ES6 class is sugar) | Requires classes |
+
+---
+
+### Q6: Why avoid modifying `Object.prototype`?
+
+```js
+Object.prototype.foo = "bar";
+
+const obj = {};
+console.log(obj.foo); // "bar" — now on EVERY object!
+
+for (let key in obj) {
+  console.log(key); // "foo" appears in all for...in loops
+}
+```
+
+**Answer:** It pollutes all objects, breaks `for...in` loops, and can conflict with future JS additions.
+
+---
+
+### Q7: What does this output and why?
+
+```js
+const obj = { a: 1 };
+Object.setPrototypeOf(obj, { b: 2 });
+Object.setPrototypeOf(Object.getPrototypeOf(obj), { c: 3 });
+
+console.log(obj.a); // ?
+console.log(obj.b); // ?
+console.log(obj.c); // ?
+```
+
+**Output:** `1`, `2`, `3`
+
+**Why:** Chain is `obj` → `{b:2}` → `{c:3}` → `Object.prototype` → `null`. All properties are accessible via the chain.
+
+---
+
+### Q8: How to check if a property is own vs inherited?
+
+```js
+const parent = { inherited: true };
+const child = Object.create(parent);
+child.own = true;
+
+console.log(child.hasOwnProperty("own"));       // true
+console.log(child.hasOwnProperty("inherited")); // false
+console.log("inherited" in child);              // true
+console.log(Object.hasOwn(child, "own"));       // true (ES2022)
+```
+
+---
+
+### Q9: Why is `Dog.prototype.constructor = Dog` needed?
+
+```js
+function Animal() {}
+function Dog() {}
+
+Dog.prototype = Object.create(Animal.prototype);
+// Dog.prototype.constructor is now Animal (broken!)
+
+Dog.prototype.constructor = Dog; // fix it
+const d = new Dog();
+console.log(d.constructor === Dog); // true (after fix)
+```
+
+**Answer:** `Object.create(Animal.prototype)` makes `Dog.prototype.constructor` point to `Animal`. Resetting it ensures instances reference the correct constructor.
+
+---
+
+### Q10: How do ES6 classes work under the hood?
+
+```js
+class Animal {
+  constructor(name) { this.name = name; }
+  speak() { return "..."; }
+}
+
+// Equivalent to:
+function Animal(name) { this.name = name; }
+Animal.prototype.speak = function() { return "..."; };
+
+class Dog extends Animal {
+  bark() { return "woof"; }
+}
+
+// Equivalent to:
+function Dog(name) { super(name); }
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+Dog.prototype.bark = function() { return "woof"; };
+```
+
+**Answer:** ES6 `class` is **syntactic sugar** over prototypal inheritance. It uses the same prototype chain mechanism.
