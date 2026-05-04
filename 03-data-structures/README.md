@@ -4,6 +4,7 @@ Files in this folder:
 - objects.md
 - arrays.md
 - array-methods.md
+- deep-shallow-copy.md
 - reduce.md
 - filter.md
 - map.md
