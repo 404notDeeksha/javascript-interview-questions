@@ -5,6 +5,9 @@ Files in this folder:
 - arrays.md
 - array-methods.md
 - reduce.md
+- filter.md
+- map.md
+- foreach.md
 - array-like-objects.md
 - loops.md
 - indexed-collections.md
