@@ -1,4 +1,4 @@
-# Closures
+# Closures **
 
 A closure in JavaScript is a feature where an inner function has access to the references (variables and parameters) of its outer (enclosing function)—even after the outer function has finished executing.
 
