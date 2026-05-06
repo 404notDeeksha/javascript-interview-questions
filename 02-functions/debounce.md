@@ -1,6 +1,7 @@
-# Debounce
+# Debounce ** --
 
-Debounce ensures that a function is not called again until a certain amount of time has passed since its last execution. If the function is called multiple times within that window, the timer resets each time. Only after the user stops triggering the event for the specified delay does the function execute.
+Debounce ensures that a function is not called again until a certain amount of time has passed since its last execution. If the function is called multiple times within that window, the timer resets each time it gets called. 
+Only after the user stops triggering the event for the specified delay does the function execute.
 
 ## Implementation
 
@@ -30,7 +31,7 @@ debouncedSearch('h');     // timer starts, gets cleared
 debouncedSearch('he');    // timer resets
 debouncedSearch('hel');   // timer resets
 debouncedSearch('hell');  // timer resets
-debouncedSearch('hello'); // timer resets, executes after 300ms
+debouncedSearch('hello'); // timer resets, fn executes after 300ms
 // Output: Searching for: hello (only once)
 ```
 

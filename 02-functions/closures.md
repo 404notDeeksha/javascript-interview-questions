@@ -31,15 +31,37 @@ closureExample(); // Output: I am from the outer function
 "In a for loop, let creates a new lexical environment for each iteration. Each function closes over a different binding of i, whereas var uses a single shared binding."
 
 ```js
+
+let arr = [];
+
 for (var i = 0; i < 3; i++) {
-  funcs.push(function() {
+  arr.push(function() {
     console.log(i);
   });
-} // 3 3 3
+} 
+
+arr[0](); // 3 
+arr[1](); // 3
+arr[2](); // 3
 
 for (let i = 0; i < 3; i++) {
-  funcs.push(function() {
+  arr.push(function() {
     console.log(i);
   });
-} // 0 1 2
+} 
+
+arr[0](); // 0 
+arr[1](); // 1
+arr[2](); // 2
+
+// Immediately Invoked Function Expression
+for (var i = 0; i < 3; i++) {
+  arr.push(function () {
+    console.log(i);
+  })(i);
+}
+
+arr[0](); // 0 
+arr[1](); // 1
+arr[2](); // 2
 ```

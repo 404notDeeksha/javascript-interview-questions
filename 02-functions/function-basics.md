@@ -1,4 +1,4 @@
-# Functions in JavaScript
+# Functions in JavaScript **
 
 A function in JavaScript is a reusable block of code designed to perform a particular task. Functions help organize and modularize code, making it easier to maintain and reuse.
 
