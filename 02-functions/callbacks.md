@@ -1,3 +1,4 @@
+# Callback Functions ** ```() => {}```
 
 It is any function passed as an argument to another function, which is then invoked inside the outer function to complete some kind of routine or action.
 

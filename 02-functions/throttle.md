@@ -1,4 +1,4 @@
-# Throttle
+# Throttle ** --
 
 Throttle ensures that a function is called at most once in a specified time interval. Unlike debounce, which delays execution until calls stop, throttle guarantees regular execution at fixed intervals while the event is firing.
 
