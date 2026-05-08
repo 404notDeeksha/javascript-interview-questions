@@ -10,7 +10,7 @@ When a function is defined inside another function, the inner function has acces
 function outerFunction() {
   let outerVariable = 'I am outside!';
   function innerFunction() {
-   outerVar
+  
     console.log(outerVariable); // 'I am outside!'
   }
   innerFunction();
