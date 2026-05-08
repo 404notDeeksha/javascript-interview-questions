@@ -75,4 +75,4 @@ Stages are:
    // Unwind Flow: three → two → one → Global
    ```
 
-7. **Handling Asynchronous Code (Event Loop)**: For asynchronous operations (like setTimeout, Promises, AJAX), the engine interacts with the browser's Web APIs, callback queue, and microtask queue. The event loop ensures that asynchronous callbacks are executed when the call stack is empty.
+7. **Handling Asynchronous Code (Event Loop)**: For asynchronous operations (like setTimeout, Promises, AJAX), the engine interacts with the browser's Web APIs, callback queue, (macrotask &  microtask queue). The event loop ensures that asynchronous callbacks are executed when the call stack is empty.

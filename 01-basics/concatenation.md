@@ -1,4 +1,4 @@
-# Concatenation
+# Concatenation - M/C ROUND
 
 It is the process of joining two or more strings together to form a single, longer string.
 
@@ -11,4 +11,6 @@ let greet = "Good";
 let result = greet.concat(" Morning", " Everyone!"); // "Good Morning Everyone!"
 const words = ["I", "love", "coding"];
 const sentence = words.join(" "); // "I love coding"
+console.log("1"+2+2); //122
+console.log(1+2+"2"); //5
 ```

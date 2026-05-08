@@ -1,4 +1,4 @@
-# Data Types in JavaScript
+# Data Types in JavaScript 
 
 Javascript has basically 2 data types:
 
@@ -10,7 +10,7 @@ Immutable, store single values:
 3. **BigInt**: represents integers with arbitrary precision. number ends with n. Can represent any size of number, limited by memory. eg: 123456123456n
 4. **Boolean**: represents logical values - true or false.
 5. **Undefined**: variable that has been declared but isnt assigned a value. eg. let value;
-6. **Null**: represents Intentional absence of any object value. eg: let value = null;
+6. **Null**: represents Intentional absence of any object value. eg: let value = null; typeof(null) = "Object"
 7. **Symbol**: represent unique, immutable values, often used as object property keys.
 
 ## B. Non-Primitive
@@ -29,5 +29,5 @@ x = { b: 2 };      // x now points to object2; y still points to previous refere
 
 let x = { a: 1 };  // x points to object1 in memory
 let y = x;         // y also points to object1
-x.a = 2;      // Mutation. This changes x & thus y too.
+x.a = 2;           // Mutation. This changes x & thus y too.
 ```
